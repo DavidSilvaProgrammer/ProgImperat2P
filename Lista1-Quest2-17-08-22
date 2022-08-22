@@ -1,0 +1,23 @@
+// Online C compiler to run C program online
+//2) Faça um programa que receba três números, calcule e mostre a multiplicação desses números.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+int n1,n2,n3, resultado;
+
+printf("Programa para multiplicar 3 numeros: \n");
+printf("Digite o primeiro numero: \n");
+scanf("%d", &n1);
+printf("Digite o segundo numero: \n");
+scanf("%d", &n2);
+printf("Digite o terceiro numero: \n");
+scanf("%d", &n3);
+resultado=n1*n2*n3;
+
+printf("Resultado:\n%d x %d x %d = %d",n1,n2,n3, resultado);
+
+
+
+    return 0;
+}
