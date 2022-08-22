@@ -1,0 +1,21 @@
+// Online C compiler to run C program online
+//Programa para pedir nome de um funcionário, salário e dar aumento de 20%
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+char nome_funcionario[20];
+float salario, aumento;
+
+printf("Digite o nome do funcionario: \n");
+scanf("%s", &nome_funcionario);
+printf("Digite o salario do funcionario: \n");
+scanf("%f",&salario);
+aumento=salario+(salario*0.2);
+printf("O salario do funcionario %s sera de R$: %0.2f", nome_funcionario, aumento );
+
+    return 0;
+}
