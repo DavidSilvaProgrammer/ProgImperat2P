@@ -1,0 +1,20 @@
+// Um funcionário recebe um salário fixo mais 4% de comissão sobre as vendas. Faça um programa que receba o salário fixo de um funcionário e o valor de suas vendas, calcule e mostre a comissão e o salário final do funcionário.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+float salario_fixo, valor_vendas, comissao, salario_final;
+
+printf("Digite o salario fixo do funcionario: \nR$: ");
+scanf("%f",&salario_fixo);
+printf("Digite o valor das vendas do funcionario: \nR$: ");
+scanf("%f",&valor_vendas);
+comissao=valor_vendas*4/100;
+salario_final=salario_fixo+comissao;
+
+printf("Comissao:\nR$: %0.2f\nR$: %0.2f",comissao,salario_final);
+
+
+
+    return 0;
+}
