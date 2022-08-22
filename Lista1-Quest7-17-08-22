@@ -4,15 +4,18 @@
 #include <math.h>
 
 int main() {
-float cateto_menor,cateto_maior, hipotenusa
+float hipotenusa, n1,n2;
 
 printf("Digite o valor do cateto menor: \n");
-scanf("%f",&cateto_menor);
+scanf("%f",&n1);
 printf("Digite o valor do cateto maior: \n");
-scanf("%f",&cateto_maior);
+scanf("%f",&n2);
+printf("**********\n");
 
-hipotenusa=(cateto_menor**2)+(cateto_maior**2)
-printf("Valor da hipotenusa:\n")
+float catetor_menor=pow(n1,2);
+float catetor_maior=pow(n2,2);
+hipotenusa=catetor_menor+catetor_maior;
+printf("Resultado:\n\nValor do cateto menor: %0.2f\nValor do cateto maior: %0.2f\nValor da hipotenusa: %0.2f", catetor_menor,catetor_maior,hipotenusa);
 
     return 0;
 }
