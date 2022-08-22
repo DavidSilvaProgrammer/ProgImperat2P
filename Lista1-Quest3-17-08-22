@@ -1,0 +1,16 @@
+// Faça um programa que receba o preço de um produto, calcule e mostre o novo preço, sabendo-se que este sofreu um desconto de 10%.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+float produto,novo_preco;
+
+printf("Programa para reajustar preço de produto com desconto de 10%\n");
+printf("Digite o preço do produto:\n");
+scanf("%f", &produto);
+novo_preco=produto-(produto*0.1);
+printf("Novo preço do produto: R$ %0.2f",novo_preco);
+
+
+    return 0;
+}
