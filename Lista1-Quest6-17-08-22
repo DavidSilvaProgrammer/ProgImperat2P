@@ -10,6 +10,5 @@ float base_menor=6,base_maior=10, altura=3, area_trapezio;
     
     area_trapezio=((base_maior+base_menor)*altura)/2;
     printf("Area do trapezio:\n%0.2f",area_trapezio);
-    
-    
-    scanf("%f",&base_menor);
+    return 0;
+}
