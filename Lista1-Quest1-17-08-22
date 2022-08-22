@@ -1,0 +1,23 @@
+// Online C compiler to run C program online
+//1-Faça um programa que receba dois números inteiros, calcule e mostre a subtração do primeiro número pelo segundo.
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+int n1,n2, resultado;
+printf("Programa para calcular a subtração de dois numeros: \n");
+printf("Digite o primeiro número: \n");
+scanf("%d", &n1);
+printf("Digite o segundo número: \n");
+scanf("%d", &n2);
+resultado=n1-n2;
+printf("%d - %d = %d",n1,n2,resultado);
+
+
+
+
+
+
+
+    return 0;
+}
