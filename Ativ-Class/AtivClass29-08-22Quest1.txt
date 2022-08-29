@@ -1,0 +1,39 @@
+/*1. Uma padaria vende uma certa quantidade de pães franceses e
+uma quantidade de broas a cada dia. Cada pãozinho custa R$
+0,12 e a broa custa R$ 1,50. Ao final do dia, o dono quer
+saber quanto arrecadou com a venda dos pães e broas (juntos),
+e quanto deve guardar numa conta de poupança (10% do total
+arrecadado). Você foi contratado para fazer os cálculos para
+o dono. Com base nestes fatos, faça um programa para ler as
+quantidades de pães e de broas, e depois calcular os dados
+solicitados.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+float quant_pao_frances, quant_broa, pao_frances=0.12, broa=1.50, total_arrecadado, poupanca, total_pao_frances, total_broa;
+
+printf("Digite a quantidade de paes franceses: \n");
+scanf("%f",&quant_pao_frances);
+printf("Digite a quantidade de broa: \n");
+scanf("%f", &quant_broa);
+total_pao_frances=quant_pao_frances*pao_frances;
+total_broa=quant_broa*broa;
+total_arrecadado=total_pao_frances+total_broa;
+poupanca=total_arrecadado*0.1;
+
+printf("Total arrecadado com a venda de pao frances: %0.2f\n", total_pao_frances);
+printf("Total arrecadado com a venda de broa: %0.2f\n", total_broa);
+printf("Total arrecadado com a venda de pao frances e broa juntos: %0.2f\n", total_arrecadado);
+printf("Os 10 %% do total arrecadado que ira para poupança: %0.2f", poupanca);
+
+
+
+    
+
+
+    return 0;
+}
