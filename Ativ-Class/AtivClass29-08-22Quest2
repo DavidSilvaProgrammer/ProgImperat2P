@@ -1,0 +1,29 @@
+/*2. Faça um programa que leia um número inteiro. Em seguida
+calcule e exiba na tela a quantidade de centenas, dezenas e
+unidades do número digitado. Considere que a entrada sempre
+terá três dígitos, ou seja, não precisa validar a entrada.
+Por exemplo, se o número digitado for 476, a saída deverá
+ser da seguinte forma:
+CENTENAS = 4
+DEZENAS = 7
+UNIDADES = 6
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    
+int numero_entrada, unidade, dezena, centena;
+
+printf("Digite um numero com tres digitos: \n");
+scanf("d",numero_entrada);
+
+centena==numero_entrada/100;
+dezena=numero_entrada%100;
+unidade=d/10;
+
+printf("Unidade: %d\nDezena: %d\nCentena: %d", )
+
+
+    return 0;
+}
