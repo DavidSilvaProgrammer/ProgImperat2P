@@ -10,19 +10,20 @@ para André e R$35,53 para Felipe.*/
 
 int main() {
 
-int valor_total, carlos, andre, resto;
-float felipe, divisao, resto2;
+int carlos, andre,resto;
+float felipe, resto2, divisao, valor_total, resto_decimal, felipe_acrescimo;
 
-printf("Digite o valor total da conta do bar: \n")
-scanf("%d",&valor_total);
+printf("Digite o valor total da conta do bar: \n");
+scanf("%f",&valor_total);
 divisao=valor_total/3;
-resto=divisao/10*10;
-resto2=resto*3;
-felipe=divisao+resto2;
-carlos=divisao-resto;
-andre=divisao-resto;
 
-printf("O valor que cada um dos tres amigos ira pagar sera: ")
+felipe=divisao;
+carlos=divisao;
+andre=divisao;
+resto_decimal=(felipe-carlos)*2;
+felipe_acrescimo=felipe+resto_decimal;
+
+printf("O valor que cada um dos tres amigos ira pagar sera:\nCarlos: %d\nAndre: %d\nFelipe: %0.2f\nSubtracao decimal %0.2f", carlos, andre, felipe_acrescimo, resto_decimal);
 
 
 
