@@ -23,7 +23,7 @@ andre=divisao;
 resto_decimal=(felipe-carlos)*2;
 felipe_acrescimo=felipe+resto_decimal;
 
-printf("O valor que cada um dos tres amigos ira pagar sera:\nCarlos: %d\nAndre: %d\nFelipe: %0.2f\nSubtracao decimal %0.2f", carlos, andre, felipe_acrescimo, resto_decimal);
+printf("O valor que cada um dos tres amigos ira pagar sera:\nCarlos: %d\nAndre: %d\nFelipe: %0.2f\n\nAcrescimo a Felipe: %0.2f", carlos, andre, felipe_acrescimo, resto_decimal);
 
 
 
