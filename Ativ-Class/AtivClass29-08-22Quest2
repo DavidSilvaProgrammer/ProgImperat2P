@@ -16,13 +16,13 @@ int main() {
 int numero_entrada, unidade, dezena, centena;
 
 printf("Digite um numero com tres digitos: \n");
-scanf("d",numero_entrada);
+scanf("%d",&numero_entrada);
 
-centena==numero_entrada/100;
-dezena=numero_entrada%100;
-unidade=d/10;
+centena=numero_entrada/100 % 100;
+dezena=numero_entrada/10 % 10;
+unidade=numero_entrada/1 % 10;
 
-printf("Unidade: %d\nDezena: %d\nCentena: %d", )
+printf("CENTENAS: %d\nDEZENAS: %d\nUNIDADES: %d", centena, dezena, unidade);
 
 
     return 0;
