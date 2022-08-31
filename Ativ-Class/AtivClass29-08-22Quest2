@@ -18,7 +18,7 @@ int numero_entrada, unidade, dezena, centena;
 printf("Digite um numero com tres digitos: \n");
 scanf("%d",&numero_entrada);
 
-centena=numero_entrada/100 % 100;
+centena=numero_entrada/100 % 10;
 dezena=numero_entrada/10 % 10;
 unidade=numero_entrada/1 % 10;
 
