@@ -40,7 +40,6 @@ for (i = 0;i < quant; i++){
 printf("Numeros repetidos");
 
 for (i = 0;i < quant; i++){
-        printf("Digite a nota do aluno numero %d da lista\n", i+1);
         aux=0;
         for (j=i+1;j<quant;j++){
             if (aluno[i] == aluno[j]){
