@@ -30,16 +30,29 @@ int quant=0;
 
 printf("Informe a quantidade de alunos: \n");
 scanf("%d",&quant);
-int aluno[quant], i=0; 
+int aluno[quant], i=0, aux=0, j=0; 
 
 for (i = 0;i < quant; i++){
-        printf("Digite a nota do aluno número %d da lista\n", i+1);
+        printf("Digite a nota do aluno numero %d da lista\n", i+1);
         scanf("%d",&aluno[i]);
 }
- 
+
+printf("Numeros repetidos");
+
+for (i = 0;i < quant; i++){
+        printf("Digite a nota do aluno numero %d da lista\n", i+1);
+        aux=0;
+        for (j=i+1;j<quant;j++){
+            if (aluno[i] == aluno[j]){
+                aux = 1;
+            }
+        }
+    if (aux == 1){
+        printf("%d\n",aluno[i]);
+        }
+    }
 
 
 
     return 0;
-}
 }
