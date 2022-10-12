@@ -36,7 +36,7 @@ for (i = 0;i < quant; i++){
         scanf("%d",&aluno[i]);
 }
 
-printf("Numeros repetidos");
+printf("Numeros repetidos\n");
 
 for (i = 0;i < quant; i++){
         aux=0;
