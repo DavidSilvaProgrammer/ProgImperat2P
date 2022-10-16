@@ -1,0 +1,35 @@
+/*Faça um programa que leia um vetor com capacidade para 10 valores inteiros. Em seguida, transfira
+todos os elementos do vetor para um segundo vetor, do mesmo tamanho, porém com os elementos
+na ordem inversa.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+int vetor[10],c,a,copia, fim=9;
+
+for (c=0;c<10;c++){
+    printf("Digite o valor do elemento numero %d do vetor:\n", c+1);
+    scanf("%d", &vetor[c]);
+    }
+printf("\nVetor digitado em sua ordem original:\n");  
+
+for (c=0;c<10;c++){
+    printf("%d, ",vetor[c]);  
+    }
+for (a=0;a<10;a++){
+    copia=vetor[a];
+    vetor[a]=vetor[fim];
+    vetor[fim]=copia;
+    fim--;
+    }
+    
+printf("\nVetor digitado em ordem inversa:\n");  
+for (c=0;c<10;c++){
+    printf("%d, ",vetor[c]);  
+    }
+
+
+    return 0;
+}
