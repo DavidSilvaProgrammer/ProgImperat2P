@@ -1,0 +1,14 @@
+/*. Elabore um programa que determine o valor de S, usando somente duas variáveis (S e outra), em que:
+s=1/1 + 2/4 + 3/9 + 4/16 + 5/25 + 6/36 + 7/49 + 8/64 + 9/81 + 10/100*/
+
+#include <stdio.h>
+
+int main(){
+	int i;
+	float s = 0;
+	for(i = 1; i <= 10; i++){
+		s = s + (float)i/(i * i);
+	}
+	printf("Soma = %0.2f", s);
+	return 0;
+}
