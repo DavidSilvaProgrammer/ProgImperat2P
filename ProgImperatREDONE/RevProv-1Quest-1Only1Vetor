@@ -18,7 +18,7 @@ printf("\nVetor digitado em sua ordem original:\n");
 for (c=0;c<10;c++){
     printf("%d, ",vetor[c]);  
     }
-for (a=0;a<10;a++){
+for (a=0;a<5;a++){
     copia=vetor[a];
     vetor[a]=vetor[fim];
     vetor[fim]=copia;
