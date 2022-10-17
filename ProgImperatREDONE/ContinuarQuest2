@@ -6,23 +6,20 @@ pelo usuário.*/
 #include <math.h>
 
 int main(){
-int numero, quant
-
-printf("Digite um número: \n");
-scanf("%d",&numero);
-
-if (numero==0){
-    quant=1
+    int numero, quant=0;
+    printf("Digite um numero: \n");
+    scanf("%d", &numero);
+    
+    if (numero == 0){
+        quant=1;
     }else{
-        while (numero != 0){
-            numero/2
+        while( numero != 0){
+            numero=numero/10;
+            quant++;
         }
     }
+    printf("O número digitado possui %d digitos.", quant);
     
-    
-    
-    
-    
-    
+
     return 0;
 }
