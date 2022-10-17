@@ -5,11 +5,12 @@ em que: s= (1/1)+(2/4)+(3/9)+(4/16)+(5/25)+(6/36)+(7/49)+(8/64)+(9/81)+(10/100)*
 #include <math.h>
 
 int main(){
-    int s,cont;
-    for (cont=1;cont<+100;cont++){
-        s=s+cont/(cont*cont);
+    float s=0;
+    int cont;
+    for (cont=1;cont<=10;cont++){
+        s=s+(float)cont/(cont*cont);
     }
-    printf("Resultado da operacao dos termos com duas variaveis: %d", s);
+    printf("Resultado da operacao dos termos com duas variaveis: %0.2f", s);
     
     
     return 0;
