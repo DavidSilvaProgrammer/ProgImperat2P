@@ -1,0 +1,23 @@
+/*    Faça um programa que calcule e informe quantos dígitos tem um número inteiro N (N > 0) informado
+pelo usuário.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+    int numero, quant=0;
+    
+    printf("Digite um numero:\n");
+    scanf("%d",&numero);
+    
+    do{
+        numero=numero/10;
+        quant++;
+    }
+    while (numero !=0);
+    
+    printf("O número digitado possui %d", quant);
+    
+    return 0;
+}
