@@ -1,0 +1,25 @@
+/*4. Faça um programa que leia um número inteiro N (N > 0) e informe se o número é primo.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+    int cont,num;
+    printf("Digite um numero para saber se e primo:\n");
+    scanf("%d",&num);
+    if(num<=1){
+        printf("Nao e primo");
+    }else{
+        for(cont=2;cont<num;cont++){
+            if (num%cont==0){
+                printf("Nao e primo");
+                break;
+            }
+        }
+    }
+    if(cont==num){
+        printf("E primo");
+    }
+    return 0;
+}
