@@ -1,0 +1,16 @@
+/*Programa para calcular centenza, dezena e unidade de um numero de 3 digitos.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+    int num, cent, deze, unid;
+    printf("Digite um número com 3 digitos:\n");
+    scanf("%d", &num);
+    cent=num/100;
+    deze=num%100;
+    unid=deze%10;
+    deze=deze/10;
+    
+    printf("Centena: %d\nDezena: %d\nUnidade: %d", cent, deze, unid);
