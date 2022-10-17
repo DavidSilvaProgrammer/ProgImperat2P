@@ -12,9 +12,9 @@ int eh_primo(int x){
         }
     }
     if(divisores==2){
-        return 1;
+        return 1; //é primo
     }else{
-        return 0;
+        return 0; //não é primo
     }
 }
 int main(){
