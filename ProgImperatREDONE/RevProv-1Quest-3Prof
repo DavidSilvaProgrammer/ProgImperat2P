@@ -1,0 +1,17 @@
+/*Em matemática, uma série é uma sequência de números que possui uma lei de formação. Faça um algoritmo para calcular a soma da série abaixo, onde a quantidade de termos deverá se
+fornecido pelo usuário:
+(1/11+1)+(2/22+1)+(3/33+1)...*/
+
+#include <stdio.h>
+
+int main(){
+	int i, n;
+	float soma = 0;
+	printf("Informe a quantidade de termos: ");
+	scanf("%d",&n);
+	for(i = 1; i <= n; i++){
+		soma = soma + (float)i/(11 * i + 1);
+	}
+	printf("Soma = %0.4f", soma);
+	return 0;
+}
