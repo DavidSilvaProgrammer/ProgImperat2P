@@ -14,9 +14,9 @@ int main(){
     scanf("%d",&quant);
     
     for (cont=1;cont<=quant;cont++){
-        result=result+((float)cont/(float)((cont*10)+(cont+1)));
+        result=result+((float)cont/((cont*10)+(cont+1)));
     }
-    printf("O numero de termos que você escolheu foi: %d\nO resultado da operacao foi: %0.2f", quant, result);
+    printf("O numero de termos que você escolheu foi: %d\nO resultado da operacao foi: %0.4f", quant, result);
     
     return 0;
 }
