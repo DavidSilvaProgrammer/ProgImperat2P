@@ -1,0 +1,12 @@
+/*4. Faça um programa que leia um número inteiro N (N > 0) e informe se o número é primo.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(){
+    
+    
+    
+    return 0;
+}
