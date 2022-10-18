@@ -1,0 +1,17 @@
+/*6) Faça um programa que calcule e mostre a área de um trapézio. Sabe-se que para calcular essa área é preciso somar a base maior 
+com a base menor, multiplicar o resultado pela altura e dividir por dois.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+    float altura,base_maior,base_menor, area;
+    printf("Digite a altura, a base maior e a menor do trapezio: \n");
+    scanf("%f %f %f",&altura,&base_maior,&base_menor);
+    area=(base_maior+base_menor)*altura/2;
+    printf("Altura: %0.2f\nBase maior: %0.2f\nBase menor:%0.2f\nArea: %0.2f",altura,base_maior,base_menor,area);
+    
+    
+    return 0;
+}
