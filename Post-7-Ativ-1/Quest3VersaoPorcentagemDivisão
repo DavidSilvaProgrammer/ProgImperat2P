@@ -1,0 +1,17 @@
+/*3) Faça um programa que receba o preço de um produto, calcule e mostre o novo preço, sabendo-se que este sofreu um desconto de 10%*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+    float preco,desconto,novo_preco;
+    printf("Informe o preco do produto:\n");
+    scanf("%f",&preco);
+    desconto=(preco*10)/100;
+    novo_preco=preco-desconto;
+    
+    printf("\nNovo preco do produto: %0.2f",novo_preco);
+    
+    return 0;
+}
