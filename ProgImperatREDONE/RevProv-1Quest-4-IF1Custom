@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+    
+int num, cont;
+
+printf("Digite um numero para saber se eh primo:\n");
+scanf("%d",&num);
+
+if (num<=1){
+    printf("Numero %d nao eh primo", num);
+    }else{
+    for(cont=2;cont<num;cont++){
+        if(num%cont == 0){
+            printf("Numero %d nao eh primo",num);
+            break;
+        }else{
+            printf("Numero %d eh primo",num);
+            break;
+        }
+    }
+}
+
+    return 0;
+}
