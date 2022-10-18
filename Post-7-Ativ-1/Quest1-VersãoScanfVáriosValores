@@ -1,0 +1,16 @@
+/*Faça um programa que receba dois números inteiros, calcule e mostre a subtração do primeiro número pelo segundo.
+OBS.: Tanto faz colocar as variaveis no scanf coladas ou separadas. Exemplo: scanf("%d%d%d", &num1, &num2, &num3); ou scanf("%d %d %d", &num1, &num2, &num3);*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+    int num1, num2, result;
+    printf("Operacao de subtracao com dois numeros.\nDigite os dois numeros da operação:\n");
+    scanf("%d %d", &num1, &num2);
+    result=num1-num2;
+    printf("Resultado: %d - %d = %d", num1, num2, result);
+    
+    return 0;
+}
