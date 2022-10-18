@@ -1,0 +1,26 @@
+/* OBS.: Laço FOR acaba depois do IF da soma de divisores. Se colocar isso até o final da função, da erro no código.
+OBS.:Lembrar de declarar o valor 0 da variável resto_zero, caso contrário não identifica números primos.
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+    int num, cont,resto_zero=0;
+    printf("Digite um numero para saber se eh primo:\n");
+    scanf("%d",&num);
+    
+    for(cont=1;cont<=num;cont++){
+        if(num%cont==0){
+            resto_zero++;
+        }
+    }
+    if(resto_zero==2){
+        printf("Numero %d eh primo.\n",num);
+    }else{
+        printf("Numero %d nao eh primo.\n",num);
+    }
+
+    return 0;
+}
