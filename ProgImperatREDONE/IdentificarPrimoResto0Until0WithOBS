@@ -1,6 +1,8 @@
 /* OBS.: Laço FOR acaba depois do IF da soma de divisores. Se colocar isso até o final da função, da erro no código.
 OBS.:Lembrar de declarar o valor 0 da variável resto_zero, caso contrário não identifica números primos.
-OBS.: Lembrar de zerar a variável resto_zero no inicio do loop para que ela possa identificar numeros primos de novo de acordo com a contagem de 2 resto_zero. Pode-se também deixar no inicio do programa a variável resto_zero sem valor e só atribuir isso no inicio do while.
+OBS.: Lembrar de zerar a variável resto_zero no inicio do loop para que ela possa identificar numeros primos de novo 
+de acordo com a contagem de 2 resto_zero. Pode-se também deixar no inicio do programa a variável resto_zero sem valor 
+e só atribuir isso no inicio do while.
 */
 
 #include <stdio.h>
