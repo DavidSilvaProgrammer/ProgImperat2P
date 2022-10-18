@@ -1,0 +1,18 @@
+/*7) Faça um programa que receba o valor dos catetos de um triângulo, calcule e mostre o valor da hipotenusa.*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+    float cateto_menor,cateto_maior,cat_menor_quad,cat_maior_quad,hipot_quad,hipotenusa;
+    printf("Digite o valor do cateto oposto (cateto menor) \ne do cateto adjacente(cateto maior):\n");
+    scanf("%f %f",&cateto_menor,&cateto_maior);
+    cat_menor_quad=pow(cateto_menor,2);
+    cat_maior_quad=pow(cateto_maior,2);
+    hipot_quad=cat_menor_quad+cat_maior_quad;
+    hipotenusa=sqrt(hipot_quad);
+    printf("Cateto menor: %0.2f\nCateto maior: %0.2f\nCateto menor ao quadrado: %0.2f\nCateto maior ao quadrado: %0.2f\nHipotenusa ao quadrado: %0.2f\nHipotenusa: %0.2f", cateto_menor,cateto_maior,cat_menor_quad,cat_maior_quad,hipot_quad,hipotenusa);
+    
+    return 0;
+}
