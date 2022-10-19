@@ -29,3 +29,37 @@ for(i=0;i<quant;i++){
 printf("O maior numero que se repete: %d",maior);
     return 0;
 }
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+int quant,notas[quant],cont, i=0,j=0,aux=0,repeticao=0, maior=0;
+
+
+printf("Informe a quantidade de alunos na turma:\n");
+scanf("%d",&quant);
+for(cont=0;cont<quant;cont++){
+printf("Informe a nota dos alunos:\n");
+scanf("%d",&notas[cont]);
+    }
+for(i=0;i<quant;i++){
+    aux=0;
+    for(j=i+1;j<quant;j++){
+        if(notas[i] == notas[j]){
+            aux=1;
+        }
+    }
+    if(aux == 1){
+        repeticao=notas[i];
+    }
+    if(repeticao > maior){
+        maior=repeticao;
+    }
+}
+printf("O maior numero que se repete: %d",maior);
+    return 0;
+}
