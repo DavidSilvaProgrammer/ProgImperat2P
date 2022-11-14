@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct tp_endereço
+struct tp_endereco
 {
     char rua[40];
     int numero;
     char bairro[40];
-    char estado[3]
+    char estado[3];
     int cep;
 };//não foi associada nenhuma var à struct ainda
 
@@ -20,13 +20,13 @@ struct tp_data_nascimento
 };//não associei nenhuma var à struct ainda, isto será feito
 //dentro da próxima struct
 
-struct cadastro_cliente
+struct cad_cliente
 {
     char nome_cliente[40];
     int telefone;
     
     //declarando variavel associada à struct tp_endereço
-    struct tp_endereço endereço;
+    struct tp_endereco endereco;
     
     //declarando variável associada à struct data_nascimento
     struct tp_data_nascimento data_nascimento;
@@ -41,28 +41,28 @@ printf("\n\n--------Cadastro dos clientes ---------\n\n");
 for (i=0;i<2;i++)
 {
     printf("\n\nNome do cliente:");
-    fflush(stdin)
+    fflush(stdin);
     gets(cad_cliente[i].nome_cliente);
-    print("\nDigite o telefone do cliente: ");
-    scanf("%d,&cad_cliente[i].telefone");
+    printf("\nDigite o telefone do cliente: ");
+    scanf("%d",&cad_cliente[i].telefone);
     
     printf("\nDigite a rua: ");
     fflush(stdin);
-    gets(cad_cliente[i].endereço.rua);
+    gets(cad_cliente[i].endereco.rua);
     
     printf("\nDigite o numero:");
-    scanf("%d",&cad_cliente[i].endereço.numero);
+    scanf("%d",&cad_cliente[i].endereco.numero);
     
     printf("\nBairro: ");
     fflush(stdin);
-    gets(cad_cliente[i].endereço.cidade);
+    gets(cad_cliente[i].endereco.cidade);
     
     printf("\nEstado: ");
     fflush(stdin);
-    gets(cad_cliente[i].endereço.estado);
+    gets(cad_cliente[i].endereco.estado);
     
     printf("Digite o CEP: ");
-    scanf("%d,&cad_cliente[i].endereço.cep");
+    scanf("%d",&cad_cliente[i].endereco.cep);
     
     printf("\nDia de nascimento: ");
     scanf("%d",&cad_cliente[i].data_nascimento.dia);
@@ -71,13 +71,13 @@ for (i=0;i<2;i++)
     
     for(i=0;i<2;i++)
     {
-        printf("\nNome: %s,cad_cliente[i].nome_cliente");
-        printf("\nRua: %s",cad_cliente[i].endereço.rua);
-        printf("\nNumero: ", cad_cliente[i].endereço.numero);
-        printf("\nBairro: ",cad_cliente[i].endereço.cidade);
-        printf("\nCidade: %s",cad_cliente[i].endereço.cidade);
-        printf("\nEstado: %s",cad_cliente[i].endereço.estado);
-        printf("\nCEP: %d", cad_cliente[i].endereço.cep);
+        printf("\nNome: %s cad_cliente[i].nome_cliente");
+        printf("\nRua: %s",cad_cliente[i].endereco.rua);
+        printf("\nNumero: ", cad_cliente[i].endereco.numero);
+        printf("\nBairro: ",cad_cliente[i].endereco.cidade);
+        printf("\nCidade: %s",cad_cliente[i].endereco.cidade);
+        printf("\nEstado: %s",cad_cliente[i].endereco.estado);
+        printf("\nCEP: %d", cad_cliente[i].endereco.cep);
         
         printf("\nDia de nasc: %d,cad_cliente[i].data_nascimento.dia");
         printf("Mes de nasc:",cad_cliente[i].data_nascimento.mes);
