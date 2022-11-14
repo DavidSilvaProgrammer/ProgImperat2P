@@ -34,11 +34,11 @@ if (vet_alunos[i].media > maior_nota){
 printf("Alunos registrados:\n");
 
 for(int i=0;i<5;++i){
-    printf("%s\n",vet_alunos[i].nome);
-    printf("%f\n",vet_alunos[i].media);
+    printf("%s",vet_alunos[i].nome);
+    printf("%0.2f\n",vet_alunos[i].media);
 }
 printf("\n");
-printf("Aluno que possui a melhor media: \n%s\nNota: %0.2f",melhor_aluno,maior_nota);
+printf("Aluno que possui a melhor media: \n\n%s\nNota: %0.2f",melhor_aluno,maior_nota);
 
     return 0;
 }
