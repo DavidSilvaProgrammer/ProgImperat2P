@@ -46,12 +46,28 @@ for (i=0;i<2;i++)
     print("\nDigite o telefone do cliente: ");
     scanf("%d,&cad_cliente[i].telefone");
     
-    printf("\nDigite a rua:");
+    printf("\nDigite a rua: ");
     fflush(stdin);
     gets(cad_cliente[i].endereço.rua);
     
     printf("\nDigite o numero:");
     scanf("%d",&cad_cliente[i].endereço.numero);
+    
+    printf("\nBairro: ");
+    fflush(stdin);
+    gets(cad_cliente[i].endereço.cidade);
+    
+    printf("\nEstado: ");
+    fflush(stdin);
+    gets(cad_cliente[i].endereço.estado);
+    
+    printf("Digite o CEP: ");
+    scanf("%d,&cad_cliente[i].endereço.cep");
+    
+    printf("\nDia de nascimento: ");
+    scanf("%d",&cad_cliente[i].data_nascimento.dia);
+    
+    //fim da coleta
     
     
 }
