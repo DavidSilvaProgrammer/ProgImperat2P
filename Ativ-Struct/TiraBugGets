@@ -1,0 +1,39 @@
+//Faça um programa para ler o nome e a média de 5 alunos. Ao final exiba o nome do aluno que possui a maior média. 
+//Use uma estrutura para representar os dados do aluno.
+
+//OBS. Fazendo esse programa, houve um bug de pular linha no gets/fgets. Encontrei em um site a resposta de que isso ocorre porque o gets gera um \n
+//por causa do enter do usuário declarar o valor da váriavel. Um programador sugeriu o uso do getcher() para eliminar o bug, porém mesmo esse comando
+//não eliminou completamente o problema, porque apesar deste conseguir evitar o gets de pular linha, ele estava também excluindo a primeira letra
+//inserida pelo usuário pelo gets. Exemplo: "João" ficava "oão". A solução definitiva só foi apontada por outro usuário que recomendou utilizar
+//a função setbuf(), essa sim conseguiu resolver o problema, além do gets para de pular linha, parou de engolir as primeiras letras dos inputs.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct tp_alunos
+{
+    char nome[40];
+    float media;
+};
+
+
+int main() {
+
+struct tp_alunos vet_alunos[4];
+
+for(int i=0;i<5;++i){
+    printf("Digite o nome do aluno %d:\n",i+1);
+    setbuf(stdin, 0);
+    fgets(vet_alunos[i].nome, 40, stdin);
+    printf("Digite a media do aluno %d:\n",i+1);
+    scanf("%f",&vet_alunos[i].media);
+}
+
+for(int i=0;i<5;++i){
+    printf("%f\n",vet_alunos[i].media);
+    printf("%s\n",vet_alunos[i].nome);
+}
+
+    return 0;
+}
