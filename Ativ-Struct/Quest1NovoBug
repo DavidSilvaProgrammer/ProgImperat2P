@@ -1,0 +1,44 @@
+//Faça um programa para ler o nome e a média de 5 alunos. Ao final exiba o nome do aluno que possui a maior média. Use uma estrutura para representar os dados do aluno.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct tp_alunos
+{
+    char nome[40];
+    float media;
+};
+
+
+int main() {
+
+struct tp_alunos vet_alunos[4];
+char melhor_aluno[40];
+float maior_nota=0;
+
+for(int i=0;i<5;++i){
+    printf("Digite o nome do aluno %d:\n",i+1);
+    setbuf(stdin, 0);
+    fgets(vet_alunos[i].nome, 40, stdin);
+    printf("Digite a media do aluno %d:\n",i+1);
+    scanf("%f",&vet_alunos[i].media);
+
+if (vet_alunos[i].media > maior_nota){
+    
+    maior_nota=vet_alunos[i].media;
+}
+
+}
+
+printf("Alunos registrados:\n");
+
+for(int i=0;i<5;++i){
+    printf("%s\n",vet_alunos[i].nome);
+    printf("%f\n",vet_alunos[i].media);
+}
+printf("\n");
+printf("Aluno que possui a melhor media: \n%s\nNota: %0.2f",melhor_aluno,maior_nota);
+
+    return 0;
+}
