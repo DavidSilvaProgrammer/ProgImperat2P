@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    
+    setlocale(LC_ALL,"Portuguese");
+    char texto[10];
+    
+    printf("Digite um texto:\n");
+    fgets(texto,10,stdin);
+    
+    printf("Você digitou: %s.\n",texto);
+   
+
+    return 0;
+}
