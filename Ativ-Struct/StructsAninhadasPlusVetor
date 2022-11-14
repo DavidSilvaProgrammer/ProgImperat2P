@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 struct tp_endereço
-
+{
     char rua[40];
     int numero;
     char bairro[40];
@@ -67,10 +67,26 @@ for (i=0;i<2;i++)
     printf("\nDia de nascimento: ");
     scanf("%d",&cad_cliente[i].data_nascimento.dia);
     
+    //percorrer o vetor de struct cad_cliente
+    
+    for(i=0;i<2;i++)
+    {
+        printf("\nNome: %s,cad_cliente[i].nome_cliente");
+        printf("\nRua: %s",cad_cliente[i].endereço.rua);
+        printf("\nNumero: ", cad_cliente[i].endereço.numero);
+        printf("\nBairro: ",cad_cliente[i].endereço.cidade);
+        printf("\nCidade: %s",cad_cliente[i].endereço.cidade);
+        printf("\nEstado: %s",cad_cliente[i].endereço.estado);
+        printf("\nCEP: %d", cad_cliente[i].endereço.cep);
+        
+        printf("\nDia de nasc: %d,cad_cliente[i].data_nascimento.dia");
+        printf("Mes de nasc:",cad_cliente[i].data_nascimento.mes);
+        printf("Ano de nasc: %d", cad_cliente[i].data_nascimento.ano);
+    }
+    
+    
     //fim da coleta
     
-    
-}
 
 
 
