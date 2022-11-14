@@ -1,0 +1,3 @@
+strcpy (variável, string); Essa função copia o valor da string na segunda posição do argumento 
+para uma variável string na primeira posição. O segundo argumento pode ser uma variável, 
+uma expressão string ou um valor literal string contido entre aspas.
