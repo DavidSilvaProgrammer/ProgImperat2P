@@ -11,14 +11,14 @@ struct ficha_aluno //tipo de dado
     float nota;
 };//definição da struct
 
-struct fichar_aluno aluno;//declaração de variável aluno que é do tipo struct ficha_aluno
+struct ficha_aluno aluno;//declaração de variável aluno que é do tipo struct ficha_aluno
 printf("\n------------Cadastro de aluno------------\n\n\n");
 
-printf("Nome de aluno .............\n\n\n");
+printf("Nome de aluno: ");
 fgets(aluno.nome,40,stdin);
 
-printf("Digite o numero do aluno");
-scanf("%d,&aluno.numero");
+printf("Digite o numero do aluno: ");
+scanf("%d",&aluno.numero);
 
 printf("Informe a nota do aluno: ");
 scanf("%f",&aluno.nota);
@@ -26,7 +26,7 @@ scanf("%f",&aluno.nota);
 printf("\n\n --------- Lendo os dados da struct -------\n\n");
 printf("Nome: %s",aluno.nome);
 printf("Numero: %d \n",aluno.numero);
-printf("Nota: %.2 \n",aluno.nota);
+printf("Nota: %0.2f \n",aluno.nota);
     
    
 
