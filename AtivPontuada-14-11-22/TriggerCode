@@ -5,7 +5,7 @@ int main() {
 /*Declarações das variaveis*/
 
 float A[5][5];int B[20][20];
-int i,j,k,x,y,z;float aux;char c;
+int i,j,k,x,y,z;float aux;
 
 /*Formação da matriz 20x20*/
 for(i=k=0;i<20;i++){
