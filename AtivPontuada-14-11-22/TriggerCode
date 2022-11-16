@@ -23,7 +23,7 @@ for(i=k=0;i<20;i++){
     }
 }
 
-printf("Escrita da matriz B");
+printf("Escrita da matriz B:\n");
 for(i=k=0;i<20;i++){
     for(j=0;j<20;j++){
         printf("%4d",B[i][j]);
@@ -43,6 +43,17 @@ for (=0;i<5;i++){
         A[i][j]=aux/16;
     }
 }
+
+printf("Escrita da matriz A:\n");
+
+for(i=0;i<5;i++){
+    for(j=0;j<5;j++){
+        printf("%8.2f",A[i][j]);
+        printf("\n");
+    }
+}
+
+
 
 
     return 0;
