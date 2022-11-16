@@ -17,7 +17,7 @@ for(i=k=0;i<20;i++){
 printf("Impressao da matriz B:\n");
 for(i=k=0;i<20;i++){
     for(j=0;j<20;j++){
-        printf("%4d",B[i][j]);
+        printf(" %4d",B[i][j]);
     }
 }
 
