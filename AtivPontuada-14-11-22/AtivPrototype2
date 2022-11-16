@@ -1,0 +1,37 @@
+//Sua tarefa é desenvolver um programa para sintetizar o conteúdo das submatrizes de uma
+//grande matriz B em elementos de outra matriz A bem menor que a primeira. Como
+//miniaturas, as dimensões delas são: B(20X20) e A(5X5). A síntese consiste na média
+//aritmética dos elementos de cada submatriz de B. Então os elementos de B são inteiros e
+//os de A são reais. A figura a seguir mostra um conteúdo possível para a matriz B e o
+//conteúdo correspondente da matriz A.
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+int A[20][20];
+float sub[5][5];
+int j,i,soma,cont,y=1;
+
+for(j=0;j<20;j++){
+        for(i=0;i<20;i++){
+            A[j][i]=y;
+            y++;
+        }
+    }
+
+printf("Matriz A:\n");    
+
+for(j=0;j<20;j++){
+    printf("\n");
+    for(i=0;i<20;i++){
+        printf("%.3d ",A[j][i]);
+    }
+}
+
+    
+    
+
+    return 0;
+}
