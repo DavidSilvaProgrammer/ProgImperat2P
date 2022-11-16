@@ -30,6 +30,20 @@ for(i=k=0;i<20;i++){
     }
 }
 
+/*Sintetização da Matriz B na matriz A*/
+
+for (=0;i<5;i++){
+    for(j=0;j<5;j++){
+        aux=0;
+        for(x=4*i;x<=4*i+3;x++){
+            for(y=4*j;y<=4*j+3;y++){
+                aux+=B[x][y];
+            }
+        }
+        A[i][j]=aux/16;
+    }
+}
+
 
     return 0;
 }
