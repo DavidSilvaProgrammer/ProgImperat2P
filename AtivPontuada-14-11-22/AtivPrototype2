@@ -10,23 +10,23 @@
 #include <stdlib.h>
 
 int main() {
-int A[20][20];
+int B[20][20];
 float sub[5][5];
 int j,i,soma,cont,y=1;
 
 for(j=0;j<20;j++){
         for(i=0;i<20;i++){
-            A[j][i]=y;
+            B[j][i]=y;
             y++;
         }
     }
 
-printf("Matriz A:\n");    
+printf("Matriz B:\n");    
 
 for(j=0;j<20;j++){
     printf("\n");
     for(i=0;i<20;i++){
-        printf("%.3d ",A[j][i]);
+        printf("%.3d ",B[j][i]);
     }
 }
 
