@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 int main() {
-/*Declarações das variaveis*/
 
 float A[5][5];int B[20][20];
 int i,j,cont,k,l;float aux;
@@ -20,8 +19,6 @@ for(i=0;i<20;i++){
         printf(" %4d",B[i][j]);
     }
 }
-
-/*Sintetização da Matriz B na matriz A*/
 
 for (i=0;i<5;i++){
     for(j=0;j<5;j++){
