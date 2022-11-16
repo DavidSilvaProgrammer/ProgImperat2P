@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+float A[5][5];int B[20][20];
+int i,j,cont,k,l;float aux;
+
+for(i=cont=0;i<20;i++){
+    for(j=0;j<20;j++){
+        B[i][j]=++cont;
+    }
+}
+
+printf("Impressao da matriz B:\n\n");
+for(i=0;i<20;i++){
+    for(j=0;j<20;j++){
+        printf(" %4d",B[i][j]);
+    }
+}
+
+for (i=0;i<5;i++){
+    for(j=0;j<5;j++){
+        aux=0;
+        for(k=4*i;k<=4*i+3;k++){
+            for(l=4*j;l<=4*j+3;l++){
+                aux+=B[k][l];
+            }
+        }
+        A[i][j]=aux/16;
+    }
+}
+printf("\n\n");
+printf("\nImpressao da matriz A:\n");
+
+for(i=0;i<5;i++){
+    printf("\n ");
+    for(j=0;j<5;j++){
+        printf("%8.2f",A[i][j]);
+    }
+}
+
+
+
+
+    return 0;
+}
