@@ -14,7 +14,7 @@ for(i=k=0;i<20;i++){
     }
 }
 
-printf("Escrita da matriz B:\n");
+printf("Impressao da matriz B:\n");
 for(i=k=0;i<20;i++){
     for(j=0;j<20;j++){
         printf("%4d",B[i][j]);
@@ -35,12 +35,12 @@ for (i=0;i<5;i++){
     }
 }
 printf("\n\n");
-printf("\nEscrita da matriz A:\n");
+printf("\nImpressao da matriz A:\n");
 
 for(i=0;i<5;i++){
+    printf("\n");
     for(j=0;j<5;j++){
         printf("%8.2f",A[i][j]);
-        printf("\n");
     }
 }
 
