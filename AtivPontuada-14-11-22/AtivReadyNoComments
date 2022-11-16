@@ -6,7 +6,6 @@ int main() {
 float A[5][5];int B[20][20];
 int i,j,cont,k,l;float aux;
 
-/*Formação da matriz 20x20*/
 for(i=cont=0;i<20;i++){
     for(j=0;j<20;j++){
         B[i][j]=++cont;
