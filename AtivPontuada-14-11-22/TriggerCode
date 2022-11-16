@@ -4,16 +4,16 @@
 int main() {
 /*Declarações das variaveis*/
 
-float A[5][5];int[20][20];
+float A[5][5];int B[20][20];
 int i,j,k,x,y,z;float aux;char c;
 
 /*Cálculo de A[i][j]*/
 aux=0;
 for(x=4*i;x<=4*i+3;x++){
-    for(y=4*j;y<=*j+3;y++){
+    for(y=4*j;y<=4*j+3;y++){
         aux+=B[x][y];
+        /*A[i][j]=aux/16; onde colocar? */
     }
-    A[i][j]=aux/16;
 }
 
 /*Formação da matriz 20x20*/
