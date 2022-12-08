@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+//#include <conio.h OBS: Não estava funcionando
+
+int main() {
+    int i;
+    printf("Gerando 10 valores aleatórios\n\n");
+    
+    /*srand(time(NULL)) objetiva inicializar o gerador de números aleatórios com o valor da função time (NULL). Este valor é claculado como sendo o total de segundos passados desde 1 de janeiro de 1970 até a data atual.
+        Desta forma a cada execução o valor da "semente" será diferente*/
+    
+    srand(time(NULL));
+    
+    for(i=0;i<10;i++){
+        /*gerando valores aleatórios entre zero e 100*/
+        printf("%3d ",rand()%100);
+    }
+
+   //getch() OBS: Não estava funcionando
+
+    return 0;
+}
