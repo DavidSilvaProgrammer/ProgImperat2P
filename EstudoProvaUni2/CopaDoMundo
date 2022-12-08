@@ -1,0 +1,20 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+    typedef Struct{
+        char nome[20];
+        int prob;
+    }Selecao;
+
+int main() {
+    Selecao selecao[32];
+    printf("Digite o nome da seleção");
+    gets(selecao[1].nome, 20, stdin);
+    printf("%s",selecao[1].nome,);
+    
+    return 0;
+}
+
+https://www.youtube.com/watch?v=FJ3AKyofbuA&ab_channel=ViniciusCria%C3%A7%C3%B5es
+https://www.educative.io/answers/how-to-use-the-typedef-struct-in-c
+https://www.youtube.com/watch?v=ToYCFiW9jk8&ab_channel=Programeseufuturo
