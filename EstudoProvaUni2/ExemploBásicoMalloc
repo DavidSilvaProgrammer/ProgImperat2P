@@ -1,0 +1,21 @@
+//Programação Descomplicada
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int *v;
+    char *c;
+    
+    /*Na alocação da memória, deve-se
+    levar em conta o tamanho do tipo.*/
+    //Exemplo: criar um array de tamanho 50
+    v = (int*) malloc(200);
+    c = (char*) malloc(50);
+    //Solução: usar sizeof()
+    v= (int*) malloc(50 * sizeof(int));
+    c = (char*) malloc (50 * sizeof(char));
+    
+    return 0;
+}
