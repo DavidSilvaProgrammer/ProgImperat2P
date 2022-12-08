@@ -3,6 +3,8 @@
 #include <time.h>
 //#include <conio.h OBS: Não estava funcionando
 
+//Gerando valores aleatórios usando rand em Linguagem C
+
 int main() {
     int i;
     printf("Gerando 10 valores aleatórios\n\n");
