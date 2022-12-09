@@ -35,7 +35,8 @@ Pessoa LerPessoa(){
     printf("Digite f ou m para o sexo: ");
     scanf("%c", &p.sexo);
     printf("Digite sua data de nascimento no formato dd mm aaaa:\n");
-    scanf("%d%d%d",&p.dataNas.dia,&p.dataNas.mes, &p.dataNas.ano); return p;
+    scanf("%d%d%d",&p.dataNas.dia,&p.dataNas.mes, &p.dataNas.ano); 
+    return p;
     
 }
     
