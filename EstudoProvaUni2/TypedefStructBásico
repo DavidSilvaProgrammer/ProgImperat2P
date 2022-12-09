@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct{
+    int dia,mes,ano;
+}Data;
+
+int main() {
+    Data data;
+    
+    data.dia=29;
+    data.mes=2;
+    data.ano=2021;
+    
+    printf("%d/%0.2d/%d\n",data.dia,data.mes,data.ano);
+
+
+    return 0;
+}
