@@ -1,7 +1,8 @@
-// Online C compiler to run C program online
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
 typedef struct{
     int dia, mes, ano;
@@ -15,10 +16,10 @@ typedef struct{
 }Pessoa;
 
 void imprimirPessoa(Pessoa p){
-    printf("tNome: %s,p.nome");
-    printf("Idade: %\n",p.idade);
-    printf("\tSexo: %c\n,p.sexo");
-    printf("\tData de nas.: %d/%d/%d\n", p.dataNas.dia, p.dataNas.mes,p.dataNas.ano);
+    printf("\tNome: %s",p.nome);
+    printf("\nIdade: %d\n",p.idade);
+    printf("\tSexo: %c\n",p.sexo);
+    printf("\tData de nas.: %d/%0.2d/%d\n", p.dataNas.dia, p.dataNas.mes,p.dataNas.ano);
     }
 //função que lê os dados de uma pessoa e retorna para quem chamou
 
@@ -28,7 +29,7 @@ Pessoa LerPessoa(){
     fgets(p.nome, 100, stdin);
     printf("Digite sua idade: ");
     scanf("%d",&p.idade);
-    scanf("%c");
+    setbuf(stdin, 0);
     
     printf("Digite f ou m para o sexo: ");
     scanf("%c", &p.sexo);
@@ -45,5 +46,3 @@ int main() {
 
     return 0;
 }
-
-https://www.youtube.com/watch?v=Hdg3MaiE39c&ab_channel=Programeseufuturo
