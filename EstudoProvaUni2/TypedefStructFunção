@@ -16,8 +16,9 @@ typedef struct{
 }Pessoa;
 
 void imprimirPessoa(Pessoa p){
+    printf("****************\n");
     printf("\tNome: %s",p.nome);
-    printf("\nIdade: %d\n",p.idade);
+    printf("\tIdade: %d\n",p.idade);
     printf("\tSexo: %c\n",p.sexo);
     printf("\tData de nas.: %d/%0.2d/%d\n", p.dataNas.dia, p.dataNas.mes,p.dataNas.ano);
     }
@@ -33,7 +34,7 @@ Pessoa LerPessoa(){
     
     printf("Digite f ou m para o sexo: ");
     scanf("%c", &p.sexo);
-    printf("Digite sua data de nascimento no formato dd mm aaaa: ");
+    printf("Digite sua data de nascimento no formato dd mm aaaa:\n");
     scanf("%d%d%d",&p.dataNas.dia,&p.dataNas.mes, &p.dataNas.ano); return p;
     
 }
