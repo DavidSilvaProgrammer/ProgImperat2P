@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+typedef struct{
+    char selecao1[20];
+    int selecao1;
+    char selecao2[20];
+    int selecao2;
+    char selecao3[20];
+    int selecao3;
+    char selecao4[20];
+    int selecao4;
+}SelecaoGrupo;
+
+selecoes
+
+int main() {
+    
+    selecao[8][4];
+    for()
+
+
+Pessoa FaseGrupo(SelecaoGrupo selecao){
+    SelecaoGrupo selecao;
+    printf("Digite seu nome: ");
+    fgets(p.nome, 100, stdin);
+    printf("Digite sua idade: ");
+    scanf("%d",&p.idade);
+    setbuf(stdin, 0);
+    
+    printf("Digite f ou m para o sexo: ");
+    scanf("%c", &p.sexo);
+    printf("Digite sua data de nascimento no formato dd mm aaaa:\n");
+    scanf("%d%d%d",&p.dataNas.dia,&p.dataNas.mes, &p.dataNas.ano); 
+    return p;
+    
+}
+
+
+
+
+
+    return 0;
+}
+
+
+https://www.lance.com.br/copa-do-mundo/conheca-o-regulamento-da-copa-do-mundo-e-veja-a-tabela-do-torneio.html
+
+https://www.goal.com/br/listas/chaveamento-copa-do-mundo-cruzamentos-mata-mata-final/blt57b065f5dc863f1e#cs51f6d7c9ddd6980d
+
+https://ge.globo.com/futebol/copa-do-mundo/noticia/2022/11/30/oitavas-de-final-copa-do-mundo-2022-entenda-como-funciona.ghtml
