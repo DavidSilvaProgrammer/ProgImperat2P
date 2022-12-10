@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+/*Aula 142: Matriz de Strings na linguagem C:*/
+
+int main() {
+    char nomes[5][25];
+    int l;
+    
+    for(l=0;l<5;l++){
+        printf("Digite o nome da posicao %d: ", l+1);
+        scanf("%25[^\n]", nomes[l]);
+        setbuf(stdin,0);
+    }
+    printf("\n***************\n");
+    printf("\nNomes digitados:\n");
+    for(l=0;l<5;l++){
+        printf("Nome na posicao %d: %s\n", l+1, nomes[l]);
+    }
+    
+    
+    return 0;
+}
