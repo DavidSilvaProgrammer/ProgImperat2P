@@ -14,28 +14,30 @@ typedef struct{
 }Pessoa;
 
 void imprimirPessoa(Pessoa p){
+    printf("******");
     printf("\n\tNome: %s",p.nome);
-    printf("Idade: %d\n",p.idade);
+    printf("\tIdade: %d\n",p.idade);
     printf("\tSexo: %c\n",p.sexo);
     printf("\tData de nas.: %d/%d/%d\n\n", p.dataNas.dia,p.dataNas.mes,p.dataNas.ano);
 }
 //função que lê os dados de uma pessoa o retorno para quem chamou
 
-Pessoa lerPessoa(){
+
     Pessoa lerPessoa(){
         Pessoa p;
+        printf("*********");
         printf("\nDigite seu nome: ");
         fgets(p.nome,100,stdin);
-        printf("Digite sua idade ");
+        printf("Digite sua idade: ");
         scanf("%d", &p.idade);
         setbuf(stdin,0);
-        printf("Digite f ou m para o sexo");
+        printf("Digite f ou m para o sexo: ");
         scanf("%c", &p.sexo);
         printf("Digite sua data de nascimento no formato dd mm aaaa: \n");
         scanf("%d%d%d",&p.dataNas.dia,&p.dataNas.mes,&p.dataNas.ano);
+        setbuf(stdin,0);
         return p;
     }
-}
 
 int main() {
     int i;
