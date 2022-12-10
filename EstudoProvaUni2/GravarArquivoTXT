@@ -15,7 +15,7 @@ int main() {
     }else{
         printf("Escreva uma palavra para testar gravacao de arquivo: ");
         //usando fprintf para armazenar o string no arquivo
-        fprintf(pont_arq,"%s",palavra);
+        fprintf(pont_arq,"%s \n",palavra);
         //usando fclose para fechar o arquivo
         fclose(pont_arq);
         printf("Dados gravados com sucesso");
