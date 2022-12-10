@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int numero;
+    printf("\n Informe um valor: ");
+    scanf("%i", &numero);
+    /* Verifica se o resto da divisão por 2 é igual a zero.
+    3/2=1.5
+    4/2=2*/
+    
+    if(numero%2 == 0){
+        printf("\n O valor digitado eh par");
+    }else{
+        printf("\n O valor digitado eh impar ");
+    }
+    
+    
+    return 0;
+}
