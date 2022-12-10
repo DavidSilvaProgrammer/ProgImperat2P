@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 /*Aula 142: Matriz de Strings na linguagem C:*/
+// scanf("%25[^\n]", nomes[l]); Diz respeito a ler o string com 25 caracter até enter ser pressionado.
+//OBS.: fgets ler o enter
+
+
 
 int main() {
     char nomes[5][25];
