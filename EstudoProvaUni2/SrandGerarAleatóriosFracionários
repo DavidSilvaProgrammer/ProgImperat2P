@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int valor, n, i;
+    float valor2;
+    
+    srand(time(NULL));
+    
+    for(i=0;i<10;i++){
+        valor=rand()%10000;
+        n=rand()%100;
+        
+        valor2=valor/10000.0;
+        printf("%f\n",n+valor2);
+    }
+    
+
+    return 0;
+}
