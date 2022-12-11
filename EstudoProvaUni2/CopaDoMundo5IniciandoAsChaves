@@ -28,6 +28,7 @@ int main() {
     
     
     int i=0,j,igual,superl=0,l,c, aux;
+    char auxchar[20];
     
     for(l=0;l<32;l++){
         strcpy(selecoes[l].nome,nomes[l]);
@@ -36,7 +37,7 @@ int main() {
     
     
     
-    printf("\n****************************\n");
+    printf("\n********Sorteio da Copa do Mundo***********\n");
     
     
     
@@ -78,11 +79,15 @@ int main() {
                 aux=selecoes[l].posicao_copa;
                 selecoes[l].posicao_copa=selecoes[c].posicao_copa;
                 selecoes[c].posicao_copa=aux;
+                
+                strcpy(auxchar,selecoes[l].nome);
+                strcpy(selecoes[l].nome,selecoes[c].nome);
+                strcpy(selecoes[c].nome,auxchar);
             }
             }
         }
-        
-        printf("***************Arrumação:*****************");
+        printf("\n*************************************\n");
+        printf("\n*********Arrumação númerica:***********");
         for(i=0;i<32;i++){
             printf("\n%s\n",selecoes[i].nome);
             printf("%d ", selecoes[i].posicao_copa);
@@ -98,10 +103,13 @@ int main() {
         }
         
         
-        
-        printf("falta de ordem achada\n");
+        printf("\n*************************************\n");
+        printf("\n******* Organizando em grupos******** \n");
         
         for(l=0;l<8;l++){
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
             for(c=0;c<4;c++){
                printf("\n%s",fasegrupo[l][c].grupos);
             }
