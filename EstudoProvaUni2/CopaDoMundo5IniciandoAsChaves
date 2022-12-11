@@ -27,7 +27,7 @@ int main() {
     char nomes[32][20]={ " Catar","Equador","Holanda","Senegal","EstadosUnidos","Inglaterra","Irã","PaísdeGales","Argentina","ArábiaSaudita","México","Polônia","França","Dinamarca","Tunísia","Austrália","Espanha","Alemanha","Japão","CostaRica","Bélgica","Canadá","Marrocos","Croácia","Brasil","Sérvia","Suíça","Camarões","Portugal","Gana","Uruguai","CoreiadoSul"};
     
     
-    int i=0,j,igual,superl=0,l,c;
+    int i=0,j,igual,superl=0,l,c, aux;
     
     for(l=0;l<32;l++){
         strcpy(selecoes[l].nome,nomes[l]);
@@ -69,9 +69,26 @@ int main() {
         for(i=0;i<32;i++){
             printf("\n%s\n",selecoes[i].nome);
             printf("%d ", selecoes[i].posicao_copa);
-    
             
         }
+        
+        for(l=0;l<32;l++){
+            for(c=l;c<32;c++){
+            if (selecoes[l].posicao_copa>selecoes[c].posicao_copa){
+                aux=selecoes[l].posicao_copa;
+                selecoes[l].posicao_copa=selecoes[c].posicao_copa;
+                selecoes[c].posicao_copa=aux;
+            }
+            }
+        }
+        
+        printf("***************Arrumação:*****************");
+        for(i=0;i<32;i++){
+            printf("\n%s\n",selecoes[i].nome);
+            printf("%d ", selecoes[i].posicao_copa);
+            
+        }
+        
         
         for(l=0;l<8;l++){
             for(c=0;c<4;c++){
