@@ -9,7 +9,7 @@ typedef struct{
 }Selecoes;
 
 typedef struct{
-    int golsfeitos, golstomados;
+    int golsfeitos, golstomados, saldodegols;
     char grupos[20];
     int posicao;
     
@@ -126,8 +126,13 @@ int main() {
             for(c=0;c<3;c++){
                 fasegrupo[l][c].golsfeitos=rand()%9;
                 fasegrupo[l][c+1].golsfeitos=rand()%9;
+                fasegrupo[l][c].golstomados=fasegrupo[l][c+1].golsfeitos;
+                fasegrupo[l][c+1].golstomados=fasegrupo[l][c].golsfeitos;
+                fasegrupo[l][c].saldodegols=fasegrupo[l][c].golsfeitos-fasegrupo[l][c].golstomados;
+                fasegrupo[l][c+1].saldodegols=fasegrupo[l][c+1].golsfeitos-fasegrupo[l][c+1].golstomados;
+                
+                
                printf("\n%s %d x %d %s",fasegrupo[l][c].grupos,fasegrupo[l][c].golsfeitos, fasegrupo[l][c+1].golsfeitos,fasegrupo[l][c+1].grupos);
-            
             }
         }
         
