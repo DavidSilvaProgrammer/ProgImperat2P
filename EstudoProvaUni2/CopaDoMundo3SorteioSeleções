@@ -16,10 +16,15 @@ int main() {
     
     Selecoes grupos[4][8];
     Selecoes selecoes[32];
+    char nomes[32][20]={"Catar","Equador","Holanda","Senegal","EstadosUnidos","Inglaterra","Irã","PaísdeGales","Argentina","ArábiaSaudita","México","Polônia","França","Dinamarca","Tunísia","Austrália","Espanha","Alemanha","Japão","CostaRica","Bélgica","Canadá","Marrocos","Croácia","Brasil","Sérvia","Suíça","Camarões","Portugal","Gana","Uruguai","CoreiadoSul"};
     
-    int i=0,j,igual;
+    
+    int i=0,j,igual,l,c;
     
     srand(time(NULL));
+    
+    
+    
     do{
         selecoes[i].posicao_copa=rand()%32;
         igual=0;
