@@ -23,12 +23,14 @@ int main() {
     int i=0,j,igual,l,c;
     
     for(l=0;l<32;l++){
-        selecoes[l].nome[l]=nomes[l];
+        strcpy(selecoes[l].nome,nomes[l]);
+        printf("\n%s",selecoes[l].nome);
         
     }
     
     
-    printf("aaaa");
+    
+    printf("\n****************************\n");
     
     for(l=0;l<32;l++){
         printf("\n%s",nomes[l]);
