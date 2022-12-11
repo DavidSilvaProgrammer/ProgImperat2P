@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 typedef struct{
     char nome[20];
@@ -16,10 +17,24 @@ int main() {
     
     Selecoes grupos[4][8];
     Selecoes selecoes[32];
-    char nomes[32][20]={"Catar","Equador","Holanda","Senegal","EstadosUnidos","Inglaterra","Irã","PaísdeGales","Argentina","ArábiaSaudita","México","Polônia","França","Dinamarca","Tunísia","Austrália","Espanha","Alemanha","Japão","CostaRica","Bélgica","Canadá","Marrocos","Croácia","Brasil","Sérvia","Suíça","Camarões","Portugal","Gana","Uruguai","CoreiadoSul"};
+    char nomes[32][20]={ " Catar","Equador","Holanda","Senegal","EstadosUnidos","Inglaterra","Irã","PaísdeGales","Argentina","ArábiaSaudita","México","Polônia","França","Dinamarca","Tunísia","Austrália","Espanha","Alemanha","Japão","CostaRica","Bélgica","Canadá","Marrocos","Croácia","Brasil","Sérvia","Suíça","Camarões","Portugal","Gana","Uruguai","CoreiadoSul"};
     
     
     int i=0,j,igual,l,c;
+    
+    for(l=0;l<32;l++){
+        selecoes[l].nome[l]=nomes[l];
+        
+    }
+    
+    
+    printf("aaaa");
+    
+    for(l=0;l<32;l++){
+        printf("\n%s",nomes[l]);
+    }
+    
+    
     
     srand(time(NULL));
     
