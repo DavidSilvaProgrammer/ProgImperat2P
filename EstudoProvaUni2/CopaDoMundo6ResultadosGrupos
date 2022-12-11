@@ -126,7 +126,7 @@ int main() {
             for(c=0;c<3;c++){
                 fasegrupo[l][c].golsfeitos=rand()%9;
                 fasegrupo[l][c+1].golsfeitos=rand()%9;
-               printf("\n%s %d x %d %s",fasegrupo[l][c].grupos,fasegrupo[l][c].golsfeitos, fasegrupo[l][c+1].grupos,fasegrupo[l][c+1].golsfeitos)
+               printf("\n%s %d x %d %s",fasegrupo[l][c].grupos,fasegrupo[l][c].golsfeitos, fasegrupo[l][c+1].golsfeitos,fasegrupo[l][c+1].grupos);
             
             }
         }
