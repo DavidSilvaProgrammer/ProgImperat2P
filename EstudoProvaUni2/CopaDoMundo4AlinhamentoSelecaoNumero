@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+
+typedef struct{
+    char nome[20];
+    int ponto, posicao_copa;
+}Selecoes;
+
+Selecoes fase_grupo(Selecoes x){
+    
+}
+
+
+int main() {
+    
+    Selecoes grupos[4][8];
+    Selecoes selecoes[32];
+    char nomes[32][20]={ " Catar","Equador","Holanda","Senegal","EstadosUnidos","Inglaterra","Irã","PaísdeGales","Argentina","ArábiaSaudita","México","Polônia","França","Dinamarca","Tunísia","Austrália","Espanha","Alemanha","Japão","CostaRica","Bélgica","Canadá","Marrocos","Croácia","Brasil","Sérvia","Suíça","Camarões","Portugal","Gana","Uruguai","CoreiadoSul"};
+    
+    
+    int i=0,j,igual,l,c;
+    
+    for(l=0;l<32;l++){
+        strcpy(selecoes[l].nome,nomes[l]);
+        
+    }
+    
+    
+    
+    printf("\n****************************\n");
+    
+    
+    
+    
+    srand(time(NULL));
+    
+    
+    
+    do{
+        selecoes[i].posicao_copa=rand()%32;
+        igual=0;
+        for(j=0;j<i;j++){
+            if(selecoes[j].posicao_copa==selecoes[i].posicao_copa){
+                igual=1;
+            }
+        }
+            if(igual==0){
+                i++;
+            }
+
+            }while(i<32);
+            
+        for(i=0;i<32;i++){
+            printf("\n%s\n",selecoes[i].nome);
+            printf("%d ", selecoes[i].posicao_copa);
+    
+            
+        }
+        
+        
+
+    return 0;
+}
