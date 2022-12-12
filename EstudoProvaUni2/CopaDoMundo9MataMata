@@ -240,8 +240,235 @@ for(l=0;l<8;l++){
 }MataMata;*/
 
 
-    printf("\n*******ficando maluco**********\n");
+    printf("\n*******transferindo**********\n");
+    //transferindo chave para matamata
     
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[0][c].vaga<fasegrupo[0][c+1].vaga){
+                   aux=fasegrupo[0][c].vaga;
+                   strcpy(auxchar,fasegrupo[0][c].grupos);
+                   fasegrupo[0][c].vaga=fasegrupo[0][c+1].vaga;
+                   strcpy(fasegrupo[0][c].grupos,fasegrupo[0][c+1].grupos);
+                   fasegrupo[0][c+1].vaga=aux;
+                   strcpy(fasegrupo[0][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[0][c].grupos,fasegrupo[0][c].vaga,c+1);
+               strcpy(matamata[c].classificados, fasegrupo[0][c].grupos);
+               }
+                  
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[1][c].vaga<fasegrupo[1][c+1].vaga){
+                   aux=fasegrupo[1][c].vaga;
+                   strcpy(auxchar,fasegrupo[1][c].grupos);
+                   fasegrupo[1][c].vaga=fasegrupo[1][c+1].vaga;
+                   strcpy(fasegrupo[1][c].grupos,fasegrupo[1][c+1].grupos);
+                   fasegrupo[1][c+1].vaga=aux;
+                   strcpy(fasegrupo[1][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[1][c].grupos,fasegrupo[1][c].vaga,c+1);
+               strcpy(matamata[c+2].classificados, fasegrupo[1][c].grupos);
+               }
+                  
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[2][c].vaga<fasegrupo[2][c+1].vaga){
+                   aux=fasegrupo[2][c].vaga;
+                   strcpy(auxchar,fasegrupo[2][c].grupos);
+                   fasegrupo[2][c].vaga=fasegrupo[2][c+1].vaga;
+                   strcpy(fasegrupo[2][c].grupos,fasegrupo[2][c+1].grupos);
+                   fasegrupo[2][c+1].vaga=aux;
+                   strcpy(fasegrupo[2][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[2][c].grupos,fasegrupo[2][c].vaga,c+1);
+               strcpy(matamata[c+4].classificados, fasegrupo[2][c].grupos);
+               }
+            
+                  
+//outro grupo
+
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[3][c].vaga<fasegrupo[3][c+1].vaga){
+                   aux=fasegrupo[3][c].vaga;
+                   strcpy(auxchar,fasegrupo[3][c].grupos);
+                   fasegrupo[3][c].vaga=fasegrupo[3][c+1].vaga;
+                   strcpy(fasegrupo[3][c].grupos,fasegrupo[7][c+1].grupos);
+                   fasegrupo[3][c+1].vaga=aux;
+                   strcpy(fasegrupo[3][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[3][c].grupos,fasegrupo[3][c].vaga,c+1);
+               strcpy(matamata[c+6].classificados, fasegrupo[3][c].grupos);
+               }
+            
+            
+                  
+//outro grupo
+
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[4][c].vaga<fasegrupo[4][c+1].vaga){
+                   aux=fasegrupo[4][c].vaga;
+                   strcpy(auxchar,fasegrupo[4][c].grupos);
+                   fasegrupo[4][c].vaga=fasegrupo[4][c+1].vaga;
+                   strcpy(fasegrupo[4][c].grupos,fasegrupo[4][c+1].grupos);
+                   fasegrupo[4][c+1].vaga=aux;
+                   strcpy(fasegrupo[4][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[4][c].grupos,fasegrupo[4][c].vaga,c+1);
+               strcpy(matamata[c+8].classificados, fasegrupo[4][c].grupos);
+               }
+            
+                  
+//outro grupo
+
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[5][c].vaga<fasegrupo[5][c+1].vaga){
+                   aux=fasegrupo[5][c].vaga;
+                   strcpy(auxchar,fasegrupo[5][c].grupos);
+                   fasegrupo[5][c].vaga=fasegrupo[5][c+1].vaga;
+                   strcpy(fasegrupo[5][c].grupos,fasegrupo[5][c+1].grupos);
+                   fasegrupo[5][c+1].vaga=aux;
+                   strcpy(fasegrupo[5][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[5][c].grupos,fasegrupo[5][c].vaga,c+1);
+               strcpy(matamata[c+10].classificados, fasegrupo[5][c].grupos);
+               }
+            
+                  
+//outro grupo
+
+
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[6][c].vaga<fasegrupo[6][c+1].vaga){
+                   aux=fasegrupo[6][c].vaga;
+                   strcpy(auxchar,fasegrupo[6][c].grupos);
+                   fasegrupo[6][c].vaga=fasegrupo[6][c+1].vaga;
+                   strcpy(fasegrupo[6][c].grupos,fasegrupo[6][c+1].grupos);
+                   fasegrupo[6][c+1].vaga=aux;
+                   strcpy(fasegrupo[6][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[6][c].grupos,fasegrupo[6][c].vaga,c+1);
+               strcpy(matamata[c+12].classificados, fasegrupo[6][c].grupos);
+               }
+            
+                  
+//outro grupo
+
+//outro grupo
+
+//transferindo chave para matamata
     
             printf("\n*****************\n");
             printf("\nGrupo %d",l+1);
@@ -249,24 +476,36 @@ for(l=0;l<8;l++){
             for(c=0;c<3;c++){
                while(fasegrupo[7][c].vaga<fasegrupo[7][c+1].vaga){
                    aux=fasegrupo[7][c].vaga;
+                   strcpy(auxchar,fasegrupo[7][c].grupos);
                    fasegrupo[7][c].vaga=fasegrupo[7][c+1].vaga;
-                   fasegrupo[7][c+1].vaga<aux;
+                   strcpy(fasegrupo[7][c].grupos,fasegrupo[7][c+1].grupos);
+                   fasegrupo[7][c+1].vaga=aux;
+                   strcpy(fasegrupo[7][c].grupos,auxchar);
                }
                   
             }
     
-        printf("\n*******ficando maluco**********\n");
+        printf("\n*******transferindo**********\n");
     
     
             printf("\n*****************\n");
             printf("\nGrupo %d",l+1);
             printf("\n------");
             for(c=0;c<2;c++){
-               printf("\n%s %d\n", fasegrupo[7][c].grupos,fasegrupo[7][c].vaga);
+               printf("\n%s %d Posição: %d\n", fasegrupo[7][c].grupos,fasegrupo[7][c].vaga,c+1);
+               strcpy(matamata[c+14].classificados, fasegrupo[7][c].grupos);
                }
+            
                   
+//outro grupo
 
-        
+
+
+
+
+
+
+
 
 
         
