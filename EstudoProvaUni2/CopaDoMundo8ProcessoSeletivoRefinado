@@ -35,7 +35,7 @@ int main() {
     char nomes[32][20]={ " Catar","Equador","Holanda","Senegal","EstadosUnidos","Inglaterra","Irã","PaísdeGales","Argentina","ArábiaSaudita","México","Polônia","França","Dinamarca","Tunísia","Austrália","Espanha","Alemanha","Japão","CostaRica","Bélgica","Canadá","Marrocos","Croácia","Brasil","Sérvia","Suíça","Camarões","Portugal","Gana","Uruguai","CoreiadoSul"};
     
     
-    int i=0,j,igual,superl=0,l,c, aux, sorte;
+    int i=0,j,igual,superl=0,l,c, aux, sorte,indice_menor,linha,troca;
     char auxchar[20];
     
     
@@ -220,44 +220,6 @@ for(l=0;l<8;l++){
             }
 }
 
-for(l=0;l<8;l++){
-            for(c=0;c<3;c++){
-                for(i=c+1;i<4;i++){
-                    while (fasegrupo[l][c].vaga==fasegrupo[l][i].vaga){
-                        fasegrupo[l][c].vaga=rand()%-5;
-                        fasegrupo[l][i].vaga=rand()%-5;
-                        
-                    }
-                    } 
-                    
-                }
-            }
-
-for(l=0;l<8;l++){
-            for(c=0;c<3;c++){
-                for(i=c+1;i<4;i++){
-                    while (fasegrupo[l][c].vaga==fasegrupo[l][i].vaga){
-                        fasegrupo[l][c].vaga=rand()%-5;
-                        fasegrupo[l][i].vaga=rand()%-5;
-                        
-                    }
-                    } 
-                    
-                }
-            }
-for(l=0;l<8;l++){
-            for(c=0;c<3;c++){
-                for(i=c+1;i<4;i++){
-                    while (fasegrupo[l][c].vaga==fasegrupo[l][i].vaga){
-                        fasegrupo[l][c].vaga=rand()%-5;
-                        fasegrupo[l][i].vaga=rand()%-5;
-                        
-                    }
-                    } 
-                    
-                }
-            }
-
             printf("\n******ConclusaoProcesso seletivo******\n");
 
 
@@ -266,7 +228,7 @@ for(l=0;l<8;l++){
             printf("\nGrupo %d",l+1);
             printf("\n------");
             for(c=0;c<4;c++){
-               printf("\n%s : Media para vaga: %d",fasegrupo[l][c].grupos,fasegrupo[l][c].vaga);
+               printf("\n%s : Vaga: %d",fasegrupo[l][c].grupos,fasegrupo[l][c].vaga);
                
             }
         }
@@ -278,11 +240,42 @@ for(l=0;l<8;l++){
 }MataMata;*/
 
 
+    printf("\n*******ficando maluco**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[7][c].vaga<fasegrupo[7][c+1].vaga){
+                   aux=fasegrupo[7][c].vaga;
+                   strcpy(auxchar,fasegrupo[7][c].grupos);
+                   fasegrupo[7][c].vaga=fasegrupo[7][c+1].vaga;
+                   strcpy(fasegrupo[7][c].grupos,fasegrupo[7][c+1].grupos);
+                   fasegrupo[7][c+1].vaga=aux;
+                   strcpy(fasegrupo[7][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******ficando maluco**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[0][c].grupos,fasegrupo[0][c].vaga,c+1);
+               strcpy(matamata[c].classificados, fasegrupo[0][c].grupos);
+               }
+            printf("\n%s",matamata[0].classificados);
+            printf("\n%s",matamata[1].classificados);
+                  
 
+        
 
 
         
 
     return 0;
             }
-
