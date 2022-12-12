@@ -1,0 +1,179 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+
+typedef struct{
+    char nome[20];
+    int posicao_copa;
+}Selecoes;
+
+typedef struct{
+    int golsfeitos, golstomados, saldodegols,pontos,somagols;
+    int somasaldo, somatomados;
+    char grupos[20];
+    int posicao;
+    
+}FaseGrupo;
+
+Selecoes fase_grupo(Selecoes x){
+    
+}
+
+
+int main() {
+    
+    Selecoes grupos[4][8];
+    Selecoes selecoes[32];
+    FaseGrupo fasegrupo[8][4];
+    char nomes[32][20]={ " Catar","Equador","Holanda","Senegal","EstadosUnidos","Inglaterra","Irã","PaísdeGales","Argentina","ArábiaSaudita","México","Polônia","França","Dinamarca","Tunísia","Austrália","Espanha","Alemanha","Japão","CostaRica","Bélgica","Canadá","Marrocos","Croácia","Brasil","Sérvia","Suíça","Camarões","Portugal","Gana","Uruguai","CoreiadoSul"};
+    
+    
+    int i=0,j,igual,superl=0,l,c, aux;
+    char auxchar[20];
+    
+    for(l=0;l<32;l++){
+        strcpy(selecoes[l].nome,nomes[l]);
+        
+    }
+    
+    
+    
+    printf("\n********Sorteio da Copa do Mundo***********\n");
+    
+    
+    
+    
+    srand(time(NULL));
+    
+    
+    
+    do{
+        selecoes[i].posicao_copa=rand()%32;
+        igual=0;
+        for(j=0;j<i;j++){
+            if(selecoes[j].posicao_copa==selecoes[i].posicao_copa){
+                igual=1;
+            }
+        }
+            if(igual==0){
+                i++;
+            }
+
+            }while(i<32);
+            
+        for(i=0;i<32;i++){
+            printf("\n%s\n",selecoes[i].nome);
+            printf("%d ", selecoes[i].posicao_copa);
+    
+            
+        }
+        
+        for(i=0;i<32;i++){
+            printf("\n%s\n",selecoes[i].nome);
+            printf("%d ", selecoes[i].posicao_copa);
+            
+        }
+        
+        for(l=0;l<32;l++){
+            for(c=l;c<32;c++){
+            if (selecoes[l].posicao_copa>selecoes[c].posicao_copa){
+                aux=selecoes[l].posicao_copa;
+                selecoes[l].posicao_copa=selecoes[c].posicao_copa;
+                selecoes[c].posicao_copa=aux;
+                
+                strcpy(auxchar,selecoes[l].nome);
+                strcpy(selecoes[l].nome,selecoes[c].nome);
+                strcpy(selecoes[c].nome,auxchar);
+            }
+            }
+        }
+        printf("\n*************************************\n");
+        printf("\n*********Arrumação númerica:***********");
+        for(i=0;i<32;i++){
+            printf("\n%s\n",selecoes[i].nome);
+            printf("%d ", selecoes[i].posicao_copa);
+            
+        }
+        
+        
+        for(l=0;l<8;l++){
+            for(c=0;c<4;c++){
+                strcpy(fasegrupo[l][c].grupos,selecoes[superl].nome);
+                superl++;
+            }
+        }
+        
+        
+        printf("\n*************************************\n");
+        printf("\n******* Organizando em grupos******** \n");
+        
+        for(l=0;l<8;l++){
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<4;c++){
+               printf("\n%s",fasegrupo[l][c].grupos);
+            }
+        }
+        
+        printf("\n*************************************\n");
+        printf("\n*******Partidas dos grupos********* \n");
+        
+        for(l=0;l<8;l++){
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+                for(i=c+1;i<4;i++){
+                
+                fasegrupo[l][c].golsfeitos=rand()%9;
+                fasegrupo[l][i].golsfeitos=rand()%9;
+                fasegrupo[l][c].golstomados=fasegrupo[l][i].golsfeitos;
+                fasegrupo[l][i].golstomados=fasegrupo[l][c].golsfeitos;
+                fasegrupo[l][c].saldodegols=fasegrupo[l][c].golsfeitos-fasegrupo[l][c].golstomados;
+                fasegrupo[l][i].saldodegols=fasegrupo[l][i].golsfeitos-fasegrupo[l][i].golstomados;
+                
+                if(fasegrupo[l][c].golsfeitos!=0){
+                    fasegrupo[l][i].somagols=fasegrupo[l][i].somagols+fasegrupo[l][i].golsfeitos;
+                }
+                if(fasegrupo[l][c].golstomados!=0){
+                    fasegrupo[l][i].somatomados=fasegrupo[l][i].somatomados+fasegrupo[l][i].golstomados;
+                }
+                
+                if(fasegrupo[l][c].saldodegols!=0){
+                    fasegrupo[l][i].somasaldo=fasegrupo[l][i].somasaldo+fasegrupo[l][i].saldodegols;
+                }
+                
+                
+                if(fasegrupo[l][c].golsfeitos>fasegrupo[l][c].golstomados){
+                    fasegrupo[l][c].pontos+3;
+                }
+                else if(fasegrupo[l][c].golsfeitos==fasegrupo[l][c].golstomados){
+                    fasegrupo[l][c].pontos+1;
+                }
+                
+                    
+               printf("\n%s %d x %d %s",fasegrupo[l][c].grupos,fasegrupo[l][c].golsfeitos, fasegrupo[l][i].golsfeitos,fasegrupo[l][i].grupos);
+               
+                }
+            }
+        }
+        
+        printf("\n*************************************\n");
+        printf("\n******* Levantamento de pontos******** \n");
+        
+        for(l=0;l<8;l++){
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<4;c++){
+               printf("\n%s",fasegrupo[l][c].grupos);
+               printf("",fasegrupo[l][c].grupos);
+               
+            }
+        }
+        
+
+    return 0;
+}
