@@ -1,0 +1,537 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+
+typedef struct{
+    char nome[20];
+    int posicao_copa;
+}Selecoes;
+
+typedef struct{
+    int golsfeitos, golstomados, saldodegols,pontos,somagols;
+    int somasaldo, somatomados;
+    char grupos[20];
+    int posicao;
+    int vaga;
+    
+}FaseGrupo;
+
+typedef struct{
+    int golsfeitos, golstomados;
+    char classificados[20];
+    int posicao;
+    
+}MataMata;
+
+
+
+int main() {
+    
+    MataMata matamata[16];
+    Selecoes grupos[4][8];
+    Selecoes selecoes[32];
+    FaseGrupo fasegrupo[8][4];
+    char nomes[32][20]={ " Catar","Equador","Holanda","Senegal","EstadosUnidos","Inglaterra","Irã","PaísdeGales","Argentina","ArábiaSaudita","México","Polônia","França","Dinamarca","Tunísia","Austrália","Espanha","Alemanha","Japão","CostaRica","Bélgica","Canadá","Marrocos","Croácia","Brasil","Sérvia","Suíça","Camarões","Portugal","Gana","Uruguai","CoreiadoSul"};
+    
+    
+    int i=0,j,igual,superl=0,l,c, aux, sorte,indice_menor,linha,troca,cont=0;
+    char auxchar[20];
+    
+    
+    
+    for(l=0;l<32;l++){
+        strcpy(selecoes[l].nome,nomes[l]);
+        
+    }
+    
+    
+    
+    printf("\n********Sorteio da Copa do Mundo***********\n");
+    
+    
+    
+    
+    srand(time(NULL));
+    
+    
+    
+    do{
+        selecoes[i].posicao_copa=rand()%32;
+        igual=0;
+        for(j=0;j<i;j++){
+            if(selecoes[j].posicao_copa==selecoes[i].posicao_copa){
+                igual=1;
+            }
+        }
+            if(igual==0){
+                i++;
+            }
+
+            }while(i<32);
+            
+        for(i=0;i<32;i++){
+            printf("\n%s\n",selecoes[i].nome);
+            printf("%d ", selecoes[i].posicao_copa);
+    
+            
+        }
+        
+        for(i=0;i<32;i++){
+            printf("\n%s\n",selecoes[i].nome);
+            printf("%d ", selecoes[i].posicao_copa);
+            
+        }
+        
+        for(l=0;l<32;l++){
+            for(c=l;c<32;c++){
+            if (selecoes[l].posicao_copa>selecoes[c].posicao_copa){
+                aux=selecoes[l].posicao_copa;
+                selecoes[l].posicao_copa=selecoes[c].posicao_copa;
+                selecoes[c].posicao_copa=aux;
+                
+                strcpy(auxchar,selecoes[l].nome);
+                strcpy(selecoes[l].nome,selecoes[c].nome);
+                strcpy(selecoes[c].nome,auxchar);
+            }
+            }
+        }
+        printf("\n*************************************\n");
+        printf("\n*********Arrumação númerica:***********");
+        for(i=0;i<32;i++){
+            printf("\n%s\n",selecoes[i].nome);
+            printf("%d ", selecoes[i].posicao_copa);
+            
+        }
+        
+        
+        for(l=0;l<8;l++){
+            for(c=0;c<4;c++){
+                strcpy(fasegrupo[l][c].grupos,selecoes[superl].nome);
+                superl++;
+            }
+        }
+        
+        
+        printf("\n*************************************\n");
+        printf("\n******* Organizando em grupos******** \n");
+        
+        for(l=0;l<8;l++){
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<4;c++){
+               printf("\n%s",fasegrupo[l][c].grupos);
+            }
+        }
+        
+        printf("\n*************************************\n");
+        printf("\n*******Partidas dos grupos********* \n");
+        
+    //zerar instancias:    
+        for(l=0;l<8;l++){
+          
+            for(c=0;c<4;c++){
+               fasegrupo[l][c].pontos=0;
+               fasegrupo[l][c].somagols=0;
+               fasegrupo[l][c].somatomados=0;
+               fasegrupo[l][c].somasaldo=0;
+               fasegrupo[l][c].vaga=0;
+            }
+        }
+        //zerar instancias até aqui
+        
+        for(l=0;l<8;l++){
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+                for(i=c+1;i<4;i++){
+                
+                fasegrupo[l][c].golsfeitos=rand()%9;
+                fasegrupo[l][i].golsfeitos=rand()%9;
+                fasegrupo[l][c].golstomados=fasegrupo[l][i].golsfeitos;
+                fasegrupo[l][i].golstomados=fasegrupo[l][c].golsfeitos;
+                fasegrupo[l][c].saldodegols=fasegrupo[l][c].golsfeitos-fasegrupo[l][c].golstomados;
+                fasegrupo[l][i].saldodegols=fasegrupo[l][i].golsfeitos-fasegrupo[l][i].golstomados;
+                
+                if(fasegrupo[l][c].golsfeitos>0){
+                    fasegrupo[l][i].somagols=fasegrupo[l][i].somagols+fasegrupo[l][i].golsfeitos;
+                }
+                if(fasegrupo[l][c].golstomados>0){
+                    fasegrupo[l][i].somatomados=fasegrupo[l][i].somatomados+fasegrupo[l][i].golstomados;
+                }
+                
+                if(fasegrupo[l][c].saldodegols>0){
+                    fasegrupo[l][i].somasaldo=fasegrupo[l][i].somasaldo+fasegrupo[l][i].saldodegols;
+                }
+                
+                
+                if(fasegrupo[l][c].golsfeitos>fasegrupo[l][c].golstomados){
+                    fasegrupo[l][c].pontos=fasegrupo[l][c].pontos+3;
+                }
+                if(fasegrupo[l][c].golsfeitos==fasegrupo[l][c].golstomados){
+                    fasegrupo[l][c].pontos+1;
+                }
+                
+                    
+               printf("\n%s %d x %d %s",fasegrupo[l][c].grupos,fasegrupo[l][c].golsfeitos, fasegrupo[l][i].golsfeitos,fasegrupo[l][i].grupos);
+               
+                }
+            }
+        }
+        
+        printf("\n*************************************\n");
+        printf("\n******* Levantamento de pontos******** \n");
+        
+        for(l=0;l<8;l++){
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<4;c++){
+               printf("\n%s : Pontos: %d Marcados: %d Tomados: %d Saldo: %d",fasegrupo[l][c].grupos,fasegrupo[l][c].pontos,fasegrupo[l][c].somagols,fasegrupo[l][c].somatomados,fasegrupo[l][c].somasaldo);
+               
+            }
+        }
+        
+    
+    
+for(l=0;l<8;l++){
+            sorte=rand()%1000;
+            printf("\n********Processo seletivo*********\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+                for(i=c+1;i<4;i++){
+                    if (fasegrupo[l][c].pontos>fasegrupo[l][i].pontos){
+                        fasegrupo[l][c].vaga=fasegrupo[l][c].vaga+10;
+                    }else if(fasegrupo[l][c].pontos==fasegrupo[l][i].pontos && fasegrupo[l][c].somasaldo > fasegrupo[l][i].somasaldo){
+                        
+                        fasegrupo[l][c].vaga=fasegrupo[l][c].vaga+3;
+                    }else if(fasegrupo[l][c].pontos==fasegrupo[l][i].pontos && fasegrupo[l][c].somasaldo == fasegrupo[l][i].somasaldo && fasegrupo[l][c].somagols> fasegrupo[l][i].somagols ){
+                        
+                        fasegrupo[l][c].vaga=fasegrupo[l][c].vaga+1;
+                    } else if (fasegrupo[l][c].pontos==fasegrupo[l][i].pontos && fasegrupo[l][c].somasaldo == fasegrupo[l][i].somasaldo && fasegrupo[l][c].somagols == fasegrupo[l][i].somagols && sorte%2 == 0){
+                        
+                        fasegrupo[l][c].vaga=fasegrupo[l][c].vaga+1;
+                    } 
+                    
+                }
+            }
+}
+
+            printf("\n******ConclusaoProcesso seletivo******\n");
+
+
+for(l=0;l<8;l++){
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<4;c++){
+               printf("\n%s : Vaga: %d",fasegrupo[l][c].grupos,fasegrupo[l][c].vaga);
+               
+            }
+        }
+        /*typedef struct{
+    int golsfeitos, golstomados;
+    char classificados[20];
+    int posicao;
+    
+}MataMata;*/
+
+
+    printf("\n*******transferindo**********\n");
+    //transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[0][c].vaga<fasegrupo[0][c+1].vaga){
+                   aux=fasegrupo[0][c].vaga;
+                   strcpy(auxchar,fasegrupo[0][c].grupos);
+                   fasegrupo[0][c].vaga=fasegrupo[0][c+1].vaga;
+                   strcpy(fasegrupo[0][c].grupos,fasegrupo[0][c+1].grupos);
+                   fasegrupo[0][c+1].vaga=aux;
+                   strcpy(fasegrupo[0][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[0][c].grupos,fasegrupo[0][c].vaga,c+1);
+               strcpy(matamata[c].classificados, fasegrupo[0][c].grupos);
+               }
+                  
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[1][c].vaga<fasegrupo[1][c+1].vaga){
+                   aux=fasegrupo[1][c].vaga;
+                   strcpy(auxchar,fasegrupo[1][c].grupos);
+                   fasegrupo[1][c].vaga=fasegrupo[1][c+1].vaga;
+                   strcpy(fasegrupo[1][c].grupos,fasegrupo[1][c+1].grupos);
+                   fasegrupo[1][c+1].vaga=aux;
+                   strcpy(fasegrupo[1][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[1][c].grupos,fasegrupo[1][c].vaga,c+1);
+               strcpy(matamata[c+2].classificados, fasegrupo[1][c].grupos);
+               }
+                  
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[2][c].vaga<fasegrupo[2][c+1].vaga){
+                   aux=fasegrupo[2][c].vaga;
+                   strcpy(auxchar,fasegrupo[2][c].grupos);
+                   fasegrupo[2][c].vaga=fasegrupo[2][c+1].vaga;
+                   strcpy(fasegrupo[2][c].grupos,fasegrupo[2][c+1].grupos);
+                   fasegrupo[2][c+1].vaga=aux;
+                   strcpy(fasegrupo[2][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[2][c].grupos,fasegrupo[2][c].vaga,c+1);
+               strcpy(matamata[c+4].classificados, fasegrupo[2][c].grupos);
+               }
+            
+                  
+//outro grupo
+
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[3][c].vaga<fasegrupo[3][c+1].vaga){
+                   aux=fasegrupo[3][c].vaga;
+                   strcpy(auxchar,fasegrupo[3][c].grupos);
+                   fasegrupo[3][c].vaga=fasegrupo[3][c+1].vaga;
+                   strcpy(fasegrupo[3][c].grupos,fasegrupo[7][c+1].grupos);
+                   fasegrupo[3][c+1].vaga=aux;
+                   strcpy(fasegrupo[3][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[3][c].grupos,fasegrupo[3][c].vaga,c+1);
+               strcpy(matamata[c+6].classificados, fasegrupo[3][c].grupos);
+               }
+            
+            
+                  
+//outro grupo
+
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[4][c].vaga<fasegrupo[4][c+1].vaga){
+                   aux=fasegrupo[4][c].vaga;
+                   strcpy(auxchar,fasegrupo[4][c].grupos);
+                   fasegrupo[4][c].vaga=fasegrupo[4][c+1].vaga;
+                   strcpy(fasegrupo[4][c].grupos,fasegrupo[4][c+1].grupos);
+                   fasegrupo[4][c+1].vaga=aux;
+                   strcpy(fasegrupo[4][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[4][c].grupos,fasegrupo[4][c].vaga,c+1);
+               strcpy(matamata[c+8].classificados, fasegrupo[4][c].grupos);
+               }
+            
+                  
+//outro grupo
+
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[5][c].vaga<fasegrupo[5][c+1].vaga){
+                   aux=fasegrupo[5][c].vaga;
+                   strcpy(auxchar,fasegrupo[5][c].grupos);
+                   fasegrupo[5][c].vaga=fasegrupo[5][c+1].vaga;
+                   strcpy(fasegrupo[5][c].grupos,fasegrupo[5][c+1].grupos);
+                   fasegrupo[5][c+1].vaga=aux;
+                   strcpy(fasegrupo[5][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[5][c].grupos,fasegrupo[5][c].vaga,c+1);
+               strcpy(matamata[c+10].classificados, fasegrupo[5][c].grupos);
+               }
+            
+                  
+//outro grupo
+
+
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[6][c].vaga<fasegrupo[6][c+1].vaga){
+                   aux=fasegrupo[6][c].vaga;
+                   strcpy(auxchar,fasegrupo[6][c].grupos);
+                   fasegrupo[6][c].vaga=fasegrupo[6][c+1].vaga;
+                   strcpy(fasegrupo[6][c].grupos,fasegrupo[6][c+1].grupos);
+                   fasegrupo[6][c+1].vaga=aux;
+                   strcpy(fasegrupo[6][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[6][c].grupos,fasegrupo[6][c].vaga,c+1);
+               strcpy(matamata[c+12].classificados, fasegrupo[6][c].grupos);
+               }
+            
+                  
+//outro grupo
+
+//outro grupo
+
+//transferindo chave para matamata
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<3;c++){
+               while(fasegrupo[7][c].vaga<fasegrupo[7][c+1].vaga){
+                   aux=fasegrupo[7][c].vaga;
+                   strcpy(auxchar,fasegrupo[7][c].grupos);
+                   fasegrupo[7][c].vaga=fasegrupo[7][c+1].vaga;
+                   strcpy(fasegrupo[7][c].grupos,fasegrupo[7][c+1].grupos);
+                   fasegrupo[7][c+1].vaga=aux;
+                   strcpy(fasegrupo[7][c].grupos,auxchar);
+               }
+                  
+            }
+    
+        printf("\n*******transferindo**********\n");
+    
+    
+            printf("\n*****************\n");
+            printf("\nGrupo %d",l+1);
+            printf("\n------");
+            for(c=0;c<2;c++){
+               printf("\n%s %d Posição: %d\n", fasegrupo[7][c].grupos,fasegrupo[7][c].vaga,c+1);
+               strcpy(matamata[c+14].classificados, fasegrupo[7][c].grupos);
+               }
+            
+                  
+//outro grupo
+
+printf("********************************:\n");
+printf("Classificados Mata Mata para oitavas de final:\n");
+for(l=0;l<16;l++){
+    printf("%s\n", matamata[l].classificados);
+}
+
+printf("********************************:\n");
+printf("Classificados Mata Mata para quartas de final:\n");
+for(l=0;l<8;l++){
+    printf("%s\n", matamata[l].classificados);
+}
+printf("********************************:\n");
+printf("Classificados Mata Mata para semi final:\n");
+for(l=0;l<4;l++){
+    printf("%s\n", matamata[l].classificados);
+}
+printf("********************************:\n");
+printf("Classificados Mata Mata para final:\n");
+for(l=0;l<2;l++){
+    printf("%s\n", matamata[l].classificados);
+}
+printf("********************************:\n");
+printf("Seleção campeã:\n");
+for(l=0;l<1;l++){
+    printf("%s\n", matamata[l].classificados);
+}
+
+
+
+
+
+
+        
+
+    return 0;
+            }
