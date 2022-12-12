@@ -32,6 +32,8 @@ int main() {
     int i=0,j,igual,superl=0,l,c, aux;
     char auxchar[20];
     
+    
+    
     for(l=0;l<32;l++){
         strcpy(selecoes[l].nome,nomes[l]);
         
@@ -120,6 +122,18 @@ int main() {
         printf("\n*************************************\n");
         printf("\n*******Partidas dos grupos********* \n");
         
+    //zerar instancias:    
+        for(l=0;l<8;l++){
+          
+            for(c=0;c<4;c++){
+               fasegrupo[l][c].pontos=0;
+               fasegrupo[l][c].somagols=0;
+               fasegrupo[l][c].somatomados=0;
+               fasegrupo[l][c].somasaldo=0;
+            }
+        }
+        //zerar instancias até aqui
+        
         for(l=0;l<8;l++){
             printf("\n*****************\n");
             printf("\nGrupo %d",l+1);
@@ -134,22 +148,22 @@ int main() {
                 fasegrupo[l][c].saldodegols=fasegrupo[l][c].golsfeitos-fasegrupo[l][c].golstomados;
                 fasegrupo[l][i].saldodegols=fasegrupo[l][i].golsfeitos-fasegrupo[l][i].golstomados;
                 
-                if(fasegrupo[l][c].golsfeitos!=0){
+                if(fasegrupo[l][c].golsfeitos>0){
                     fasegrupo[l][i].somagols=fasegrupo[l][i].somagols+fasegrupo[l][i].golsfeitos;
                 }
-                if(fasegrupo[l][c].golstomados!=0){
+                if(fasegrupo[l][c].golstomados>0){
                     fasegrupo[l][i].somatomados=fasegrupo[l][i].somatomados+fasegrupo[l][i].golstomados;
                 }
                 
-                if(fasegrupo[l][c].saldodegols!=0){
+                if(fasegrupo[l][c].saldodegols>0){
                     fasegrupo[l][i].somasaldo=fasegrupo[l][i].somasaldo+fasegrupo[l][i].saldodegols;
                 }
                 
                 
                 if(fasegrupo[l][c].golsfeitos>fasegrupo[l][c].golstomados){
-                    fasegrupo[l][c].pontos+3;
+                    fasegrupo[l][c].pontos=fasegrupo[l][c].pontos+3;
                 }
-                else if(fasegrupo[l][c].golsfeitos==fasegrupo[l][c].golstomados){
+                if(fasegrupo[l][c].golsfeitos==fasegrupo[l][c].golstomados){
                     fasegrupo[l][c].pontos+1;
                 }
                 
@@ -168,12 +182,12 @@ int main() {
             printf("\nGrupo %d",l+1);
             printf("\n------");
             for(c=0;c<4;c++){
-               printf("\n%s",fasegrupo[l][c].grupos);
-               printf("",fasegrupo[l][c].grupos);
+               printf("\n%s : Pontos: %d Marcados: %d Tomados: %d Saldo: %d",fasegrupo[l][c].grupos,fasegrupo[l][c].pontos,fasegrupo[l][c].somagols,fasegrupo[l][c].somatomados,fasegrupo[l][c].somasaldo);
                
             }
         }
         
 
     return 0;
-}
+            }
+
