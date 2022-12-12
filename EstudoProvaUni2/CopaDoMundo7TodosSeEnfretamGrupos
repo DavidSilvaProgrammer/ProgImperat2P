@@ -125,12 +125,22 @@ int main() {
             printf("\n------");
             for(c=0;c<3;c++){
                 for(i=c+1;i<4;i++){
-               printf("\n%s x %s",fasegrupo[l][c].grupos, fasegrupo[l][i].grupos);
+                //concertando
+                fasegrupo[l][c].golsfeitos=rand()%9;
+                fasegrupo[l][i].golsfeitos=rand()%9;
+                fasegrupo[l][c].golstomados=fasegrupo[l][i].golsfeitos;
+                fasegrupo[l][i].golstomados=fasegrupo[l][c].golsfeitos;
+                fasegrupo[l][c].saldodegols=fasegrupo[l][c].golsfeitos-fasegrupo[l][c].golstomados;
+                fasegrupo[l][i].saldodegols=fasegrupo[l][i].golsfeitos-fasegrupo[l][i].golstomados;
+                //concertando
+                    
+                    
+               printf("\n%s %d x %d %s",fasegrupo[l][c].grupos,fasegrupo[l][c].golsfeitos, fasegrupo[l][i].golsfeitos,fasegrupo[l][i].grupos);
+               
+               
                 }
             }
         }
-        
-        
         
 
     return 0;
