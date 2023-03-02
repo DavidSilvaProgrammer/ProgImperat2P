@@ -3,7 +3,7 @@
 #include <string.h>
 
 int main() {
-    char nomes[5][20];
+    char nomes[5][20],procurado[20];
     int l;
     
     for(l=0;l<5;l++){
@@ -16,6 +16,13 @@ int main() {
     for (l=0;l<5;l++){
         printf("Nome na posicao %d: %s", l+1, nomes[l]);
     }
-
+    printf("*******\n");
+    printf("Digite o nome da pessoa que deseja procurar na lista de convidados da festa:\n");
+    setbuf(stdin,0);
+    fgets(procurado,20,stdin);
+    
+    printf("Nome do procurado: %s", procurado);
+    
+    
     return 0;
 }
