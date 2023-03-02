@@ -1,0 +1,8 @@
+int buscaSeq(int *v, int tamanho, int valor){
+    for (int i=0;i<tamanho;i++){
+        if(valor == v[i]){
+            return(1);
+        }
+    }
+    return(0);
+}
