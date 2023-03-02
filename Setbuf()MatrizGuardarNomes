@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    char nomes[5][20];
+    int l;
+    
+    for(l=0;l<5;l++){
+        printf("Digite o nome do convidado a posicao %d: ",l+1);
+        setbuf(stdin, 0);
+        fgets(nomes[l], 20, stdin);
+        
+    }
+    printf("*******\n");
+    for (l=0;l<5;l++){
+        printf("Nome na posicao %d: %s", l+1, nomes[l]);
+    }
+
+    return 0;
+}
