@@ -1,3 +1,10 @@
+/*• Dados a lista de convidados de uma festa e o nome de uma pessoa, determinar se
+essa pessoa é ou não convidada da festa. Codifique um programa completo para
+resolver esse problema. Crie um procedimento para fazer a entrada da lista de
+convidados e adapte a função buscaSeq para verificar se o nome consta ou não da
+lista.*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
