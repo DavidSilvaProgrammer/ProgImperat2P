@@ -1,0 +1,43 @@
+
+/*• Dados a lista de convidados de uma festa e o nome de uma pessoa, determinar se essa pessoa é ou não convidada da festa. Codifique um programa completo para resolver esse problema. Crie um procedimento para fazer a entrada da lista de convidados e adapte a função buscaSeq para verificar se o nome consta ou não da lista.*/
+
+int buscaSeq(int *v, int tamanho, char procurado){
+    valor=0;
+    for (int i=0;i<tamanho;i++){
+        if(valor == v[i]){
+            return(i);
+        }
+    }
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+    char nomes[5][20],procurado[20];
+    int l;
+    
+    for(l=0;l<5;l++){
+        printf("Digite o nome do convidado a posicao %d: ",l+1);
+        setbuf(stdin, 0);
+        fgets(nomes[l], 20, stdin);
+        
+    }
+    printf("*******\n");
+    for (l=0;l<5;l++){
+        printf("Nome na posicao %d: %s", l+1, nomes[l]);
+    }
+    printf("*******\n");
+    printf("Digite o nome da pessoa que deseja procurar na lista de convidados da festa:\n");
+    setbuf(stdin,0);
+    fgets(procurado,20,stdin);
+    
+    printf("Nome do procurado: %s", procurado);
+    
+buscaSeq(nomes,4, procurado); 
+
+
+    
+    return(0);
+}
