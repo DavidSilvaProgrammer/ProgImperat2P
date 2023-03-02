@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int vet[]={1,5,9,15,18},i;
+    
+    for (i=0;i<5;i++){
+        printf("Valor vetor: %d\n",vet[i]);
+    }
+
+    return 0;
+}
